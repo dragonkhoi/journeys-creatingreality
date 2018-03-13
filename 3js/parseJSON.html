@@ -16,21 +16,32 @@
 
                     // Check if user exists in JSON file
                     if (userID in jsonObj.Users) { 
-                        console.log("user found");
 
                         // Check if user has any journeys
                         userJourneys = jsonObj.Users[userID].Journeys;
-                        console.log(userJourneys);
-                        console.log(userJourneys.length);
-                        if (userJourneys.length) {
+                        
+                        if (Object.keys(userJourneys).length != 0) {
 
                             //Check if selected journey exists in the user's journey
                             if (JTitle in userJourneys) {
-                                console.log("found journey!");
 
-                                // Read the details of the journey
-                                journeyDetails = userJourneys.JTitle;
-                                console.log(journeyDetails);
+                                // Read the waypoints of the journey
+                                journeyWaypoints = userJourneys[JTitle].Waypoints;
+
+                                // For each waypoint, do the following:
+                                for (let i = 0; i < journeyWaypoints.length; i++) {
+
+                                    // Location
+                                    console.log(journeyWaypoints[i].Location);
+
+                                    //For each Content point:
+                                    for (let j = 0; j < journeyWaypoints[i].ContentPoints.length; j++) {
+                                        
+                                        // Do something with the content point
+                                        console.log(journeyWaypoints[i].ContentPoints[j]);  
+                                        
+                                    }  
+                                }
                             }
                         }
 
