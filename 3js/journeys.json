@@ -1,8 +1,8 @@
 {
     "Users" : {
         "U001" : {
-            "Journeys": [
-                {
+            "Journeys": {
+                "First Award" : {
                     "JID": 1,
                     "Waypoints" : [
                         {
@@ -66,8 +66,7 @@
                         }
                     ]
                 }
-            ]
+            }
         }
     }
-
 }

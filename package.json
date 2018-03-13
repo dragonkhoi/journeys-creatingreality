@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/dragonkhoi/journeys-creatingreality/issues"
   },
-  "homepage": "https://github.com/dragonkhoi/journeys-creatingreality#readme"
+  "homepage": "https://github.com/dragonkhoi/journeys-creatingreality#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
