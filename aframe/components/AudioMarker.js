@@ -6,16 +6,17 @@ AFRAME.registerComponent('audio-marker', {
     //   width: { type: 'number', default: 1 },
     //   height: { type: 'number', default: 1 },
     //   planeColor: { type: 'color', default: "#333"},
-    //   position: { type: 'string', default: "0 0 0"}
+      position: { type: 'string', default: "0 0.005 -0.5"}
     },
     init: function(){
       console.log(this.data);
-      this.el.setAttribute("src", this.data.audioUri);
+      this.el.setAttribute('sound', 'src:url("' + this.data.audioUri + '")');
+    //   this.el.setAttribute("src", this.data.audioUri);
       this.el.setAttribute("autoplay", true);      
     //   this.el.setAttribute("text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center");
     //   this.el.setAttribute("geometry", "primitive: plane; width: auto; height: auto");
     //   this.el.setAttribute("material", "color: " + this.data.planeColor);
-    //   this.el.setAttribute("position", this.data.position);
+      this.el.setAttribute("position", this.data.position);
       // set the
     }
   });
