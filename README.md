@@ -8,19 +8,20 @@ Jaxon's local demo server:
 - http://10.123.3.120/
 
 Prarthana's local demo server:
-- 
+- yo ip
 
 Khoi's local demo server:
-- 
+- yo ip
 
 Vishnu's local demo server:
-- 
+- yo ip
 
 GitHub hosted demo server (no directory browser, so you gotta use a specific path):
 - https://dragonkhoi.github.io/journeys-creatingreality/<project name>/
 - https://dragonkhoi.github.io/journeys-creatingreality/3js/
 - https://dragonkhoi.github.io/journeys-creatingreality/aframe/
 - https://dragonkhoi.github.io/journeys-creatingreality/jax_demo/
+
 
 ### Updating external demo server:
 - Ask Jaxon to pull
