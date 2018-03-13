@@ -17,7 +17,6 @@ Vishnu's local demo server:
 - yo ip
 
 GitHub hosted demo server (no directory browser, so you gotta use a specific path):
-- https://dragonkhoi.github.io/journeys-creatingreality/"project name"/
 - https://dragonkhoi.github.io/journeys-creatingreality/3js/
 - https://dragonkhoi.github.io/journeys-creatingreality/aframe/
 - https://dragonkhoi.github.io/journeys-creatingreality/jax_demo/
