@@ -1,0 +1,21 @@
+{
+  "name": "journeys-creatingreality",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server source -p 80 -c-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dragonkhoi/journeys-creatingreality.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dragonkhoi/journeys-creatingreality/issues"
+  },
+  "homepage": "https://github.com/dragonkhoi/journeys-creatingreality#readme"
+}
