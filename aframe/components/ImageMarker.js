@@ -9,6 +9,7 @@ AFRAME.registerComponent('img-marker', {
   },
   init: function(){
     console.log(this.data.message);
+    this.el.setAttribute("src", imgUri);
     this.el.setAttribute("text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center");
     this.el.setAttribute("geometry", "primitive: plane; width: auto; height: auto");
     this.el.setAttribute("material", "color: " + this.data.planeColor);
