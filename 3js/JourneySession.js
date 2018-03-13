@@ -2,8 +2,10 @@ function JourneySession(journeyObject) {
   this.journeyObject = journeyObject;
   this.waypoints = journeyObject.Waypoints;
   this.wpObjs = [];
-  this.nextWaypoint = 0; // journeyObject.waypoints[0]
+  this.nextWaypoint = 0;
   this.goToNextWaypoint = goToNextWaypoint;
+  this.createWaypoints = createWaypoints;
+  this.displayMarkers = displayMarkers;
 }
 
 // model: function to create ContentPoint from given JSON content
@@ -21,8 +23,8 @@ function createWaypoints(){
   for(var i = 0; i < this.waypoints.length; i++){
     var curWP = this.waypoints[i];
     var newContentPoints = [];
-    for(var j = 0; j < curWP.contentPoints.length; j++){
-      var curCP = curWP.contentPoints[j];
+    for(var j = 0; j < curWP.ContentPoints.length; j++){
+      var curCP = curWP.ContentPoints[j];
       var newCP = new ContentPoint(curCP.type, curCP.reference, curCP.orientation);
       newContentPoints.push(newCP);
     }
@@ -31,8 +33,9 @@ function createWaypoints(){
   }
 }
 
+// view
 function displayMarkers(){
-  for(var i = 0; i < this.waypoints[this.nextWaypoint].length; i++){
+  for(var i = 0; i < this.wpObjs[this.nextWaypoint].length; i++){
     //display each
   }
 }
