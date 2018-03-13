@@ -9,6 +9,8 @@
 	<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
 	<script src="components/TextMarker.js"></script>
 	<script src="components/ImageMarker.js"></script>
+	<script src="components/AudioMarker.js"></script>
+
 	<script src="ContentPoint.js"></script>
 	<script src="Waypoint.js"></script>
 	<script src="JourneySession.js"></script>
@@ -16,15 +18,17 @@
 </head>
 <body>
 	<a-scene ar>
-		<a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
 		<a-assets>
-			<img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/">
+			<!-- <img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/"> -->
 			<!-- large.jpg, above is small.jpg
 			https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/
 	 		-->
 		</a-assets>
-		<a-entity image-marker="position: 0 0.005 -2"></a-entity>
+		<a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
 		<a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity>
+		<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
+		<a-entity audio-marker="position: 0 0.005 -0.5"></a-entity>
+
 		<!-- <a-sky src="#sky"></a-sky> -->
 		<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
 		<!-- <a-sky src="https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/"></a-sky> -->

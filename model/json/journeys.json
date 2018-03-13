@@ -26,10 +26,10 @@
                                     "Orientation": 90
                                 },
                                 {
-                                    "Title": "A video of my award ceremony",
+                                    "Title": "An audio of my award ceremony",
                                     "Description": "I was awarded a fellowship for my PhD.", 
-                                    "Type": "video",
-                                    "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
+                                    "Type": "audio",
+                                    "Ref" : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
                                     "Orientation" : 45
                                 }
                             ]
@@ -56,10 +56,10 @@
                                     "Orientation": 90
                                 },
                                 {
-                                    "Title": "Our goofy video",
+                                    "Title": "Our goofy audio",
                                     "Description": "", 
-                                    "Type": "video",
-                                    "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
+                                    "Type": "audio",
+                                    "Ref" : "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
                                     "Orientation" : 45
                                 }
                             ]
