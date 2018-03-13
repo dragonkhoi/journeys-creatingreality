@@ -39,3 +39,43 @@ function displayMarkers(){
     //display each
   }
 }
+
+
+function fetchJourney(userID,JTitle) {
+
+    var jsonURL = "../model/json/journeys.json";
+    
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+
+            // Read JSON ddata
+            jsonObj = JSON.parse(xhttp.responseText);
+
+            // Check if user exists in JSON file
+            if (userID in jsonObj.Users) { 
+
+                // Check if user has any journeys
+                userJourneys = jsonObj.Users[userID].Journeys;
+                
+                if (Object.keys(userJourneys).length != 0) {
+
+                    //Check if selected journey exists in the user's journey
+                    if (JTitle in userJourneys) {
+
+                      // Instantiate objects
+                      JourneySession(userJourneys[JTitle]);
+                    }
+                }
+            }
+            else {
+                console.log("user not found");
+            }
+        }
+    };
+    xhttp.open("GET",jsonURL, true);
+    xhttp.send();
+}
+
+// fetchJourney("U001","First Award");
