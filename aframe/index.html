@@ -18,6 +18,11 @@
 </head>
 <body>
 	<a-scene ar>
+
+		<a-assets>
+				<audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay
+					preload></audio>
+		</a-assets>
 		<a-assets>
 			<!-- <img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/"> -->
 			<!-- large.jpg, above is small.jpg
@@ -27,8 +32,9 @@
 		<a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
 		<a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity>
 		<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
-		<a-entity audio-marker="position: 0 0.005 -0.5"></a-entity>
+		<!-- <a-entity audio-marker="position: 0 0.005 -0.5"></a-entity>
 		<a-sound src="src: url(../model/audio/SoundHelix-Song-9.mp3)" autoplay="true" position="0 0.005 -0.5"></a-sound>
+		 -->
 
 		<!-- <a-sky src="#sky"></a-sky> -->
 		<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
