@@ -4,23 +4,23 @@
 External demo server:  
 http://jbjw.ngrok.io/
 
-Jaxon's local demo server:  
-http://10.123.3.120/
+Jaxon's local demo server:
+- http://10.123.3.120/
 
 Prarthana's local demo server:
-
+- 
 
 Khoi's local demo server:
-
+- 
 
 Vishnu's local demo server:
-
+- 
 
 GitHub hosted demo server (no directory browser, so you gotta use a specific path):
-https://dragonkhoi.github.io/journeys-creatingreality/<project name>/
-https://dragonkhoi.github.io/journeys-creatingreality/3js/
-https://dragonkhoi.github.io/journeys-creatingreality/aframe/
-https://dragonkhoi.github.io/journeys-creatingreality/jax_demo/
+- https://dragonkhoi.github.io/journeys-creatingreality/<project name>/
+- https://dragonkhoi.github.io/journeys-creatingreality/3js/
+- https://dragonkhoi.github.io/journeys-creatingreality/aframe/
+- https://dragonkhoi.github.io/journeys-creatingreality/jax_demo/
 
 ### Updating external demo server:
 - Ask Jaxon to pull
