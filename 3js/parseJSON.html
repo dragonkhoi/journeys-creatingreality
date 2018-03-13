@@ -1,52 +1,5 @@
 <html>
     <head>
-        <script>
-        // Parse the JSON
-        var jsonURL = "journeys.json";
-        console.log(jsonURL);
-
-        var fetchData = function(userID,JTitle) {
-            var xhttp = new XMLHttpRequest();
-
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-
-                    // Read JSON ddata
-                    jsonObj = JSON.parse(xhttp.responseText);
-
-                    // Check if user exists in JSON file
-                    if (userID in jsonObj.Users) { 
-                        console.log("user found");
-
-                        // Check if user has any journeys
-                        userJourneys = jsonObj.Users[userID].Journeys;
-                        console.log(userJourneys);
-                        console.log(userJourneys.length);
-                        if (userJourneys.length) {
-
-                            //Check if selected journey exists in the user's journey
-                            if (JTitle in userJourneys) {
-                                console.log("found journey!");
-
-                                // Read the details of the journey
-                                journeyDetails = userJourneys.JTitle;
-                                console.log(journeyDetails);
-                            }
-                        }
-
-
-                    }
-                    else {
-                        console.log("user not found");
-                    }
-                }
-            };
-            xhttp.open("GET",jsonURL, true);
-            xhttp.send();
-        }
-
-
-        fetchData("U001","First Award");
-        </script>
+        <script type="text/javascript" src="journeySession.js"></script>
     </head>
 </html>
