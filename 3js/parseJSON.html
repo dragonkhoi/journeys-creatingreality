@@ -16,6 +16,7 @@
                     console.log(xhttp.responseText);
                     jsonObj = JSON.parse(xhttp.responseText);
                     console.log(jsonObj);
+                    console.log(jsonObj.Users);
 
                     // Check if user exists in JSON file
                     if (userID in jsonObj.Users) { 
