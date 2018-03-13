@@ -7,9 +7,12 @@
 	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 	<script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
 	<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
-	<script src="index.js"></script>
 	<script src="components/TextMarker.js"></script>
-
+	<script src="components/ImageMarker.js"></script>
+	<script src="ContentPoint.js"></script>
+	<script src="Waypoint.js"></script>
+	<script src="JourneySession.js"></script>
+	<script src="index.js"></script>
 </head>
 <body>
 	<a-scene ar>
@@ -20,8 +23,8 @@
 			https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/
 	 		-->
 		</a-assets>
+		<a-entity image-marker="position: 0 0.005 -2"></a-entity>
 		<a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity>
-		<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
 		<!-- <a-sky src="#sky"></a-sky> -->
 		<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
 		<!-- <a-sky src="https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/"></a-sky> -->
