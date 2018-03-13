@@ -5,7 +5,6 @@
         var jsonURL = "journeys.json";
         console.log(jsonURL);
 
-
         var fetchData = function(userID,JTitle) {
             var xhttp = new XMLHttpRequest();
 
@@ -13,6 +12,8 @@
                 if (this.readyState == 4 && this.status == 200) {
 
                     // Read JSON ddata
+                    console.log(xhttp);
+                    console.log(xhttp.responseText);
                     jsonObj = JSON.parse(xhttp.responseText);
                     console.log(jsonObj);
 
