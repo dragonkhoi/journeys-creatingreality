@@ -12,11 +12,7 @@
                 if (this.readyState == 4 && this.status == 200) {
 
                     // Read JSON ddata
-                    console.log(xhttp);
-                    console.log(xhttp.responseText);
                     jsonObj = JSON.parse(xhttp.responseText);
-                    console.log(jsonObj);
-                    console.log(jsonObj.Users);
 
                     // Check if user exists in JSON file
                     if (userID in jsonObj.Users) { 
@@ -24,6 +20,8 @@
 
                         // Check if user has any journeys
                         userJourneys = jsonObj.Users[userID].Journeys;
+                        console.log(userJourneys);
+                        console.log(userJourneys.length);
                         if (userJourneys.length) {
 
                             //Check if selected journey exists in the user's journey
