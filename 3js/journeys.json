@@ -1,72 +1,73 @@
 {
     "Users" : {
         "U001" : {
-            "Journeys": [
-                {
-                    "JID": 1,
-                    "Waypoints" : [
-                        {
-                            "Location" : {
-                                "Lat" : 34.020134,
-                                "Lng" : -118.286297
+            "Journeys": {
+                    "First Award" : {
+                        "JID": 1,
+                        "Waypoints" : [
+                            {
+                                "Location" : {
+                                    "Lat" : 34.020134,
+                                    "Lng" : -118.286297
+                                },
+                                "ContentPoints" : [
+                                    {
+                                        "Title": "My first award",
+                                        "Description": "This is where I won my first award.", 
+                                        "Type": "text",
+                                        "Ref" : "",
+                                        "Orientation": 180
+                                    },
+                                    {
+                                        "Title": "Photo with my parents",
+                                        "Description": "We took a picture together!", 
+                                        "Type" : "image",
+                                        "Ref" : "https://goo.gl/ekFcLn",
+                                        "Orientation": 90
+                                    },
+                                    {
+                                        "Title": "A video of my award ceremony",
+                                        "Description": "I was awarded a fellowship for my PhD.", 
+                                        "Type": "video",
+                                        "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
+                                        "Orientation" : 45
+                                    }
+                                ]
                             },
-                            "ContentPoints" : [
-                                {
-                                    "Title": "My first award",
-                                    "Description": "This is where I won my first award.", 
-                                    "Type": "text",
-                                    "Ref" : "",
-                                    "Orientation": 180
-                                },
-                                {
-                                    "Title": "Photo with my parents",
-                                    "Description": "We took a picture together!", 
-                                    "Type" : "image",
-                                    "Ref" : "https://goo.gl/ekFcLn",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "A video of my award ceremony",
-                                    "Description": "I was awarded a fellowship for my PhD.", 
-                                    "Type": "video",
-                                    "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
-                                    "Orientation" : 45
-                                }
-                            ]
-                        },
 
-                        {
-                            "Location" : {
-                                "Lat" : 34.020237,
-                                "Lng" : -118.286186
-                            },
-                            "ContentPoints" : [
-                                {
-                                    "Title": "I saw your mother here.",
-                                    "Description": "I was in my junior year when I saw your mother for the first time", 
-                                    "Type": "text",
-                                    "Ref" : "",
-                                    "Orientation": 180
+                            {
+                                "Location" : {
+                                    "Lat" : 34.020237,
+                                    "Lng" : -118.286186
                                 },
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
-                                    "Type" : "image",
-                                    "Ref" : "https://goo.gl/ekFcLn",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "Our goofy video",
-                                    "Description": "", 
-                                    "Type": "video",
-                                    "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
-                                    "Orientation" : 45
-                                }
-                            ]
-                        }
-                    ]
+                                "ContentPoints" : [
+                                    {
+                                        "Title": "I saw your mother here.",
+                                        "Description": "I was in my junior year when I saw your mother for the first time", 
+                                        "Type": "text",
+                                        "Ref" : "",
+                                        "Orientation": 180
+                                    },
+                                    {
+                                        "Title": "Photo when we went on our first date",
+                                        "Description": "We went for ice cream for our first date", 
+                                        "Type" : "image",
+                                        "Ref" : "https://goo.gl/ekFcLn",
+                                        "Orientation": 90
+                                    },
+                                    {
+                                        "Title": "Our goofy video",
+                                        "Description": "", 
+                                        "Type": "video",
+                                        "Ref" : "https://www.youtube.com/watch?v=eERe0-E4Zpg",
+                                        "Orientation" : 45
+                                    }
+                                ]
+                            }
+                        ]
+                    }
                 }
-            ]
+            }
         }
     }
 
