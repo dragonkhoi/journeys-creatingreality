@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "http-server source -p 80 -c-1",
+    "start": "http-server . -p 80 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
