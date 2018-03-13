@@ -28,7 +28,7 @@ function createWaypoints(){
       var newCP = new ContentPoint(curCP.type, curCP.reference, curCP.orientation);
       newContentPoints.push(newCP);
     }
-    var newWP = new Waypoint(curWP.lat, curWP.lng, newContentPoints);
+    var newWP = new Waypoint(curWP.Location.Lat, curWP.Location.Lng, newContentPoints);
     this.wpObjs.push(newWP);
   }
 }
