@@ -42,13 +42,13 @@ function createTextMarker(posX){
   signpostGeometry.setAttribute("scale", "6.0 6.0 0.0"); 
   // signpostGeometry.setAttribute("look-at", "[camera]");  
   signpostGeometry.setAttribute("position", "0 -2.5 -12");
-  signpostGeometry.setAttribute("text", "value: This text will be  units wide. This text will be  units wide. This text will be  units wide. This text will be  units wide.This text will be  units wide. ; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;");  
+  signpostGeometry.setAttribute("text", "value:" + this.description + "; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;");  
 
   var signlegGeometry = document.createElement('a-entity');
   signlegGeometry.setAttribute("id", "signlegGeometry");
-  signlegGeometry.setAttribute("geometry", "primitive: plane; width: 0.05; height: 0.7");
+  signlegGeometry.setAttribute("geometry", "primitive: plane; width: 0.05; height: 1.0");
   signlegGeometry.setAttribute("material", "color: #1e1e1e"); 
-  signlegGeometry.setAttribute("position", "0 -0.2 -100"); 
+  signlegGeometry.setAttribute("position", "0 -0.5 -100"); 
 
   document.getElementById("markers").appendChild(signpostGeometry);  
   document.getElementById("signpostGeometry").appendChild(signlegGeometry); 

@@ -54,7 +54,7 @@ function calculatePositions() {
       break;
     }
     case 3: {
-      positionsX = [-3,3];
+      positionsX = [-4,0,4];
       break;
     }
     case 4: {
