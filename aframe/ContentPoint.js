@@ -23,11 +23,14 @@ function createMarker(){
 }
 
 function createImageMarker(){
-  var newEl = document.createElement('a-entity');
-  newEl.setAttribute("img-marker","");
+  var newEl = document.createElement('a-img');
+  newEl.setAttribute("src", this.mediaUri);
+  document.getElementById("markers").appendChild(newEl);
 }
 function createTextMarker(){
-
+  var newEl = document.createElement('a-entity');
+  newEl.setAttribute("text-marker", "message: " + this.mediaUri + ";");
+  document.getElementById("markers").appendChild(newEl);
 }
 function createAudioMarker(){
 
