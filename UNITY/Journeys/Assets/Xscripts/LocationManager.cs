@@ -25,6 +25,7 @@ public class LocationManager : MonoBehaviour {
     public GameObject signPostPrefab;
     public GameObject photoFramePrefab;
     public GameObject arrowPrefab;
+    public GameObject audioPrefab;
 
     private const string DEV_KEY = "TeXjuEfR9xxj74YUoGfYRb7UQISvDIq95B1C6TYU3b4HpLDPxOAjdQess4LKocUY";
 
@@ -146,6 +147,10 @@ public class LocationManager : MonoBehaviour {
             waypoints.Add(theJourney.waypoints[i]);
             
             SpawnWaypoint(theJourney.waypoints[i]);
+            if(i == 0)
+            {
+                waypointGOs[0].GetComponent<WaypointObj>().SetRenderer(false);
+            }
             if(i > 0)
             {
                 // spawn path
@@ -158,6 +163,7 @@ public class LocationManager : MonoBehaviour {
                 for(int j = 1; j  < numArrows; j++)
                 {
                     Vector3 newPos = prevPos + (j * chunk);
+                    newPos = newPos - new Vector3(0f, 1f, 0f);
                     GameObject arrowObj = Instantiate(arrowPrefab, newPos, Quaternion.identity, wpParent) as GameObject;
                     arrowObj.transform.LookAt(curPos);
                 }
@@ -179,7 +185,7 @@ public class LocationManager : MonoBehaviour {
     void SpawnWaypoint(Waypoint wp)
     {
         Vector3 pos = toUnityPos(wp.latLng.x, wp.latLng.y);
-        GameObject wpGO = Instantiate(WaypointPrefab, pos - new Vector3(0, 3f, 0), Quaternion.identity, wpParent) as GameObject;
+        GameObject wpGO = Instantiate(WaypointPrefab, pos - new Vector3(0, 1f, 0), Quaternion.identity, wpParent) as GameObject;
         waypointGOs.Add(wpGO);
         wpGO.transform.LookAt(GameObject.FindGameObjectWithTag("Player").transform);
         for (var i = 0; i < wp.contentPoints.Count; i++)
@@ -189,7 +195,7 @@ public class LocationManager : MonoBehaviour {
     }
     void SpawnContentPoint(ContentPoint cp, GameObject wpGO, float i)
     {
-        var radius = 5f;
+        var radius = 3f;
         Vector3 offset = new Vector3(radius * Mathf.Sin(i), 0, radius * Mathf.Cos(i));
 
         if (cp.contentType == ContentPoint.ContentType.TEXT)
@@ -197,16 +203,26 @@ public class LocationManager : MonoBehaviour {
             GameObject textGO = Instantiate(signPostPrefab, wpGO.transform.position + offset, Quaternion.identity, wpGO.transform) as GameObject;
             textGO.transform.LookAt(wpGO.transform);
             textGO.transform.Rotate(new Vector3(0, 180, 0));
-            textGO.transform.Translate(new Vector3(0, -3f, 0));
+            //textGO.transform.Translate(new Vector3(0, -3f, 0));
             textGO.transform.GetChild(0).GetComponent<TextMesh>().text = cp.mediaUri;
             wpGO.GetComponent<WaypointObj>().AddContentPointGO(textGO);
         }
-        if (cp.contentType == ContentPoint.ContentType.IMAGE)
+        else if (cp.contentType == ContentPoint.ContentType.IMAGE)
         {
             GameObject photoGO = Instantiate(photoFramePrefab, wpGO.transform.position + offset, Quaternion.identity, wpGO.transform) as GameObject;
             photoGO.transform.LookAt(wpGO.transform);
+            //photoGO.transform.Translate(new Vector3(0, -1f, 0));
+
             photoGO.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = Resources.Load(cp.mediaUri) as Texture;
             wpGO.GetComponent<WaypointObj>().AddContentPointGO(photoGO);
+
+        }
+        else if(cp.contentType == ContentPoint.ContentType.AUDIO)
+        {
+            GameObject audioGO = Instantiate(audioPrefab, wpGO.transform.position + offset, Quaternion.identity, wpGO.transform) as GameObject;
+            audioGO.transform.LookAt(wpGO.transform);
+            audioGO.GetComponent<Speaker>().SetAudioClip(Resources.Load(cp.mediaUri) as AudioClip);
+            wpGO.GetComponent<WaypointObj>().AddContentPointGO(audioGO);
 
         }
     }

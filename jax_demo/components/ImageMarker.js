@@ -13,6 +13,7 @@ AFRAME.registerComponent('img-marker', {
     this.el.setAttribute("geometry", "primitive: plane; width: auto; height: auto");
     this.el.setAttribute("material", "color: " + this.data.planeColor);
     this.el.setAttribute("position", this.data.position);
+    this.el.setAttribute("look-at", "[camera]");
     // set the
   }
 });

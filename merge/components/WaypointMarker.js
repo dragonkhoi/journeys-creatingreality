@@ -16,6 +16,7 @@ AFRAME.registerComponent( "waypoint-marker", {
 		// this.el.setAttribute( "text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center" )
 		this.el.setAttribute( "geometry", "primitive: box; width: 2; height: 40; depth: 2;" )
 		this.el.setAttribute( "material", "color", this.data.color )
+
 		// this.el.setAttribute( "position", this.data.position )
 	},
 	tick: function () {
@@ -31,18 +32,20 @@ AFRAME.registerComponent( "waypoint-marker", {
 		const userCoords = this.data.userCoords
 		const coords = this.data.coords
 		if ( userCoords !== null ) {
+			// console.log( this.data.userCoords, this.data.coords )
 
-			// const bearing = this.getBearing( userCoords, coords )
-			// // console.log( this.data.name, bearing )
-			// const distance = this.getDistance( userCoords, coords )
-			// const x = distance * Math.sin( Math.radians( bearing ) )
-			// const y = 0.5
-			// const z = distance * Math.cos( Math.radians( bearing ) )
-			// this.el.object3D.position.x = x
-			// this.el.object3D.position.y = y
-			// this.el.object3D.position.z = -z
-			// // position.set(1, 2, 3);
-			// // waypoint.setAttribute( "position", `${x} ${y} ${z}` )
+			const bearing = Geo.getBearing( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
+			// console.log( this.data.name, bearing )
+			const distance = Geo.getDistance( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
+			// console.log( "???", bearing, distance )
+			const x = distance * Math.sin( Math.radians( bearing ) )
+			const y = 0.5
+			const z = distance * Math.cos( Math.radians( bearing ) )
+			this.el.object3D.position.x = x
+			this.el.object3D.position.y = y
+			this.el.object3D.position.z = -z
+			// position.set(1, 2, 3);
+			// waypoint.setAttribute( "position", `${x} ${y} ${z}` )
 		}
 	},
 } )

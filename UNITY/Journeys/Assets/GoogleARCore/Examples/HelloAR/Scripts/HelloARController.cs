@@ -34,6 +34,8 @@ namespace GoogleARCore.HelloAR
     /// </summary>
     public class HelloARController : MonoBehaviour
     {
+        public bool anchorCreated = false;
+        public Transform wpPivot;
         /// <summary>
         /// The first-person camera being used to render the passthrough camera image (i.e. AR background).
         /// </summary>
@@ -105,6 +107,12 @@ namespace GoogleARCore.HelloAR
                 // Instantiate a plane visualization prefab and set it to track the new plane. The transform is set to
                 // the origin with an identity rotation since the mesh for our prefab is updated in Unity World
                 // coordinates.
+                //if (!anchorCreated)
+                //{
+                //    anchorCreated = true;
+                //    var anchor = m_NewPlanes[i].CreateAnchor(new Pose());
+                //    wpPivot.parent = anchor.transform;
+                //}
                 GameObject planeObject = Instantiate(TrackedPlanePrefab, Vector3.zero, Quaternion.identity,
                     transform);
                 planeObject.GetComponent<TrackedPlaneVisualizer>().Initialize(m_NewPlanes[i]);
@@ -138,25 +146,32 @@ namespace GoogleARCore.HelloAR
 
             if (Frame.Raycast(touch.position.x, touch.position.y, raycastFilter, out hit))
             {
-                var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
+                if (!anchorCreated)
+                {
+                    anchorCreated = true;
+                    wpPivot.position = hit.Pose.position;
+                    var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                    wpPivot.transform.parent = anchor.transform;
+                }
+                //var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
 
                 // Create an anchor to allow ARCore to track the hitpoint as understanding of the physical
                 // world evolves.
-                var anchor = hit.Trackable.CreateAnchor(hit.Pose);
+                //var anchor = hit.Trackable.CreateAnchor(hit.Pose);
 
-                // Andy should look at the camera but still be flush with the plane.
-                if ((hit.Flags & TrackableHitFlags.PlaneWithinPolygon) != TrackableHitFlags.None)
-                {
-                    // Get the camera position and match the y-component with the hit position.
-                    Vector3 cameraPositionSameY = FirstPersonCamera.transform.position;
-                    cameraPositionSameY.y = hit.Pose.position.y;
+                //// Andy should look at the camera but still be flush with the plane.
+                //if ((hit.Flags & TrackableHitFlags.PlaneWithinPolygon) != TrackableHitFlags.None)
+                //{
+                //    // Get the camera position and match the y-component with the hit position.
+                //    Vector3 cameraPositionSameY = FirstPersonCamera.transform.position;
+                //    cameraPositionSameY.y = hit.Pose.position.y;
 
-                    // Have Andy look toward the camera respecting his "up" perspective, which may be from ceiling.
-                    andyObject.transform.LookAt(cameraPositionSameY, andyObject.transform.up);
-                }
+                //    // Have Andy look toward the camera respecting his "up" perspective, which may be from ceiling.
+                //    //andyObject.transform.LookAt(cameraPositionSameY, andyObject.transform.up);
+                //}
 
                 // Make Andy model a child of the anchor.
-                andyObject.transform.parent = anchor.transform;
+                //andyObject.transform.parent = anchor.transform;
             }
         }
 

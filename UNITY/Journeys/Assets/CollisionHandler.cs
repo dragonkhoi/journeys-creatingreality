@@ -8,12 +8,16 @@ public class CollisionHandler : MonoBehaviour {
     {
         if(other.tag == "Player")
         {
-            GetComponentInParent<Renderer>().enabled = false;
+            GetComponentInParent<WaypointObj>().SetRenderer(false);
         }
         // loop through content points
         WaypointObj wpObj = GetComponentInParent<WaypointObj>();
         foreach(GameObject go in wpObj.contentPointGOs)
         {
+            if(go.GetComponent<Speaker>() != null)
+            {
+                go.GetComponent<Speaker>().PlaySounds();
+            }
             if(go.tag == "SignPrefab")
             {
                 TrackableHit hit;
@@ -50,7 +54,7 @@ public class CollisionHandler : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            GetComponentInParent<Renderer>().enabled = true;
+            GetComponentInParent<WaypointObj>().SetRenderer(true);
         }
     }
 }
