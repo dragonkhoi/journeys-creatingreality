@@ -95,6 +95,7 @@ function activateCamera(){
 
   }
 }
+
 function createJourney(){
   CREATING = true;
   START = true;
@@ -117,9 +118,14 @@ function showStoryHover(){
 function hideStoryHover(){
   setTimeout(function(){
     document.getElementById("journeySelect").style.display = "none";
-    document.getElementById("introScreen").style.display = "block";
+    document.getElementById("hitStartPanel").style.display = "block";
 
   }, 300);
+}
+
+function showIntroScreen(){
+  document.getElementById("hitStartPanel").style.display = "none";
+  document.getElementById("introScreen").style.display = "block";
 }
 
 function startJourney(){

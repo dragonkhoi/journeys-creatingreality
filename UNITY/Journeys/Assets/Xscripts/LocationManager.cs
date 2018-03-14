@@ -146,6 +146,10 @@ public class LocationManager : MonoBehaviour {
             waypoints.Add(theJourney.waypoints[i]);
             
             SpawnWaypoint(theJourney.waypoints[i]);
+            if(i == 0)
+            {
+                waypointGOs[0].GetComponent<WaypointObj>().SetRenderer(false);
+            }
             if(i > 0)
             {
                 // spawn path
@@ -158,6 +162,7 @@ public class LocationManager : MonoBehaviour {
                 for(int j = 1; j  < numArrows; j++)
                 {
                     Vector3 newPos = prevPos + (j * chunk);
+                    newPos = newPos - new Vector3(0f, 5f, 0f);
                     GameObject arrowObj = Instantiate(arrowPrefab, newPos, Quaternion.identity, wpParent) as GameObject;
                     arrowObj.transform.LookAt(curPos);
                 }
