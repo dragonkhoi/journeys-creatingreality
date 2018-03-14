@@ -42,6 +42,22 @@
 					<!-- </button> -->
 			</div>
 		</div>
+		<div id="plusOverlay" style="display: none">
+			<div id="topPlusBar" style="top: 0; width: 100%; position: absolute">
+				<div id="plusButtonContainer" style="max-height: 10%">
+					<img id="expandShareMenu" src="../assets/img/button_share_inactive.png" style="width: 13%; padding: 20px; z-index: 2; position: absolute" onclick="activateShareMenu()"></img>
+					<img id="expandShareMenuHit" src="../assets/img/button_share_active.png" style="width: 13%; padding: 20px; display: none; z-index: 2; position: absolute" onclick="closeShareMenu()"></img>
+				</div>
+				<div id="shareButtonBar" style="display: none; left: 70px; top: 0; width: 100%; position: absolute">
+					<img id="takePhotoBar" src="../assets/img/button_share_expanded.png" style="width: 70%; padding: 20px; position: absolute"></img>
+					<img id="takePhotoText" src="../assets/img/text_take_selfie.png" style="width: 18%; left:30px; top: 40px; position: absolute" onclick="activateCamera()"></img>
+					<img id="takePhotoTextBlack" src="../assets/img/text_take_selfie_hit.png" style="width: 18%; left:30px; top: 40px; position: absolute; display: none" onclick="activateCamera()"></img>
+
+					<img id="addNoteText" src="../assets/img/text_add_note.png" style="width: 18%; left:120px; top: 40px; position: absolute"></img>
+					<img id="addVoiceText" src="../assets/img/text_add_voice.png" style="width: 18%; left:210px; top: 40px; position: absolute"></img>
+				</div>
+			</div>
+		</div>
 		<div id="takePhotoOverlay" style="display: none">
 			<div id="bottomPhotoBar" style="width: 100%; bottom: 0; position: absolute; text-align: center">
 				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;"> </img>
@@ -72,7 +88,7 @@
 		<!-- <a-assets>
 			<img id="my-image" src="https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg">
 		</a-assets> -->
-		
+
 		<!-- <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere> -->
 		<!-- <a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity> -->
 		<!-- <a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity> -->
