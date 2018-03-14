@@ -1,5 +1,16 @@
 // main handler
+var CREATING = false;
+
 var JOURNEY;
+
+var START = false;
+
+// wait for START == true
+// check if CREATING or going on a JOURNEY
+if(!CREATING) {
+
+}
+
 fetchJourney("U001", "First Award");
 
 setTimeout(function(){

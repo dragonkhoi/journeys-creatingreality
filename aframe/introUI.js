@@ -44,6 +44,36 @@ function closeShareMenu(){
   }
 }
 
+function activateWaypointMenu(){
+  var plusButtonHit = document.querySelector("#waypointExpandShareMenuHit");
+  plusButtonHit.style.display = "block";
+  var shareButtonBar = document.querySelector("#waypointShareButtonBar");
+  shareButtonBar.style.display = "block";
+}
+
+function closeWaypointMenu(){
+  var plusButtonHit = document.querySelector("#waypointExpandShareMenuHit");
+  if(plusButtonHit.style.display == "block"){
+    plusButtonHit.style.display = "none";
+    var shareButtonBar = document.querySelector("#waypointShareButtonBar");
+    shareButtonBar.style.display = "none";
+  }
+}
+function activateWaypointCamera(){
+  var photoActivate = document.querySelector("#waypointTakePhotoText");
+  var photoActivateBlack = document.querySelector("#waypointTakePhotoTextBlack");
+  var takePhotoOverlay = document.querySelector("#waypointTakePhotoOverlay");
+  if(takePhotoOverlay.style.display == "block"){
+    takePhotoOverlay.style.display = "none";
+    photoActivateBlack.style.display = "none";
+    photoActivate.style.display = "block";
+  }else {
+    takePhotoOverlay.style.display = "block";
+    photoActivateBlack.style.display = "block";
+    photoActivate.style.display = "none";
+
+  }
+}
 function activateCamera(){
   var photoActivate = document.querySelector("#takePhotoText");
   var photoActivateBlack = document.querySelector("#takePhotoTextBlack");
@@ -59,9 +89,16 @@ function activateCamera(){
 
   }
 }
-
+function createJourney(){
+  CREATING = true;
+  START = true;
+  console.log("start button hit");
+  document.getElementById("homescreen").style.display = "none";
+  document.getElementById("waypointAdder").style.display = "block";
+}
 function startButton(){
   console.log("start button hit");
+  START = true;
   document.getElementById("homescreen").style.display = "none";
   document.getElementById("journeySelect").style.display = "block";
 }
