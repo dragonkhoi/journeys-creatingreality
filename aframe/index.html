@@ -41,20 +41,24 @@
 		</div>
 	</div>
 	<a-scene ar>
-		<a-assets>
+		<!-- <a-assets> -->
 			<!-- <img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/"> -->
 			<!-- large.jpg, above is small.jpg
 			https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/
 	 		-->
+		<!-- </a-assets> -->
+
+		<a-assets>
+			<a-asset-item id="signpostAsset" src="../assets/models/signpost.glb"></a-asset-item>
 		</a-assets>
 
 		<!-- <a-assets>
 			<img id="my-image" src="https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg">
 		</a-assets> -->
 		
-		<a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere>
-		<a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity>
-		<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
+		<!-- <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere> -->
+		<!-- <a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity> -->
+		<!-- <a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity> -->
 		<!-- <a-entity audio-marker="position: 0 0.005 -0.5"></a-entity> -->
 		<!-- <a-entity img-marker="position: 0 0.005 -100"></a-entity> -->
 		<!-- Using the asset management system. -->
@@ -64,8 +68,10 @@
 		<!-- <a-sky src="#sky"></a-sky> -->
 		<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
 		<!-- <a-sky src="https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/"></a-sky> -->
-		<a-cube width="3" height="4" color="red" position="0 0.005 -3"></a-cube>
-		<a-entity id="markers"> </a-entity>
+		<!-- <a-cube width="3" height="4" color="red" position="0 0.005 -3"></a-cube> -->
+
+
+		<a-entity id="markers"></a-entity> </a-entity>
 		<!-- <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity> -->
 		<!-- <a-entity id="player"></a-entity> -->
 

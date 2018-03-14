@@ -28,13 +28,28 @@ function createMarker(){
 
 function createImageMarker(){
   var newEl = document.createElement('a-entity');
-  newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position: 0 0.005 -200");
+  newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position: -100 0.005 -200");
   document.getElementById("markers").appendChild(newEl);
 }
 function createTextMarker(){
-  var newEl = document.createElement('a-entity');
-  newEl.setAttribute("text-marker", "message: " + this.description + ";");
-  document.getElementById("markers").appendChild(newEl);
+  var signpost = document.createElement('a-entity');
+  signpost.setAttribute("id", "signpost");
+  signpost.setAttribute("gltf-model", "#signpostAsset");
+  signpost.setAttribute("position", "0 0 -1000");
+  document.getElementById("markers").appendChild(signpost);
+
+  var description = document.createElement('a-entity');
+  description.setAttribute("id", "desc");
+  description.setAttribute("text-marker", "message: " + this.description + ";position: 0 0.005 -100;");
+  description.setAttribute("material", "opacity:0");
+  
+
+  // console.log(description);
+
+  // console.log(document.getElementById('signpost'));
+  // document.getElementById("signpost").appendChild(description);
+
+  document.getElementById("markers").appendChild(description);  
 }
 function createAudioMarker(){
 

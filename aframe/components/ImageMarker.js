@@ -4,7 +4,7 @@ AFRAME.registerComponent('img-marker', {
     imgDescription: { type: 'string', default: 'Image' },
     width: { type: 'number', default: 100 },
     height: { type: 'number', default: 100 },
-    position: { type: 'string', default: "0 0 -20"}
+    position: { type: 'string', default: "0 0 0"}
   },
   init: function(){
     this.el.setAttribute("position", this.data.position);
