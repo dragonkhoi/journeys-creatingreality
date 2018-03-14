@@ -59,7 +59,7 @@ AFRAME.registerComponent( "waypoint-marker", {
 		}
 
 		// this.el.setAttribute( "text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center" )
-		this.el.setAttribute( "geometry", "primitive: box; width: 1; height: 100; depth: 1;" )
+		this.el.setAttribute( "geometry", "primitive: box; width: 10; height: 100; depth: 10;" )
 		this.el.setAttribute( "material", "color", this.data.color )
 		// this.el.setAttribute( "position", this.data.position )
 	},

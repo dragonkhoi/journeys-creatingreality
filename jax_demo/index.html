@@ -20,45 +20,29 @@
 				<a href="https://developers.google.com/ar/develop/web/getting-started#examples">examples</a>
 			</span>
 		</div> -->
+		<div class="overlay">
+			<span id="orientation-absolute"></span><br/>
+			<span id="orientation-init"></span><br/>
+			<span id="orientation-webkit-compass-heading"></span><br/>
+			<span id="orientation-alpha-z"></span><br/>
+			<span id="orientation-beta-x"></span><br/>
+			<span id="orientation-gamma-y"></span><br/>
+
+		</div>
 		<a-scene>
 			<a-assets>
 				<a-asset-item id="tree" src="../assets/models/speaker2.glb"></a-asset-item>
 			</a-assets>
-			<!-- <a-entity environment="preset: forest;"></a-entity> -->
-			<a-entity gltf-model="#tree" scale="0.01 0.01 0.01" position="0 1 0"></a-entity>
-			<!-- <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere> -->
+			<!-- <a-entity gltf-model="#tree" scale="0.01 0.01 0.01" position="0 1 0"></a-entity> -->
+			<!-- <a-sphere radius="0.1" position="0 1 2"></a-sphere> -->
 			<!-- <a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity> -->
-			<!-- <a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
-			<a-box id="waypoint" position="-1 0.5 -3" scale="1 10 1" rotation="0 0 0" color="#4CC3D9"></a-box> -->
-			<!-- <a-sphere></a-sphere> -->
-			<!-- <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity> -->
-			<!-- <a-entity id="player"></a-entity> -->
+			<!-- <a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity> -->
+			<!-- <a-entity environment="preset: forest;"></a-entity> -->
+			<a-sphere radius="1" position="0 0 -10" color="blue"></a-sphere>
+			<a-entity id="wrapper">
+				<a-sphere radius="1" position="0 0 -10" color="red"></a-sphere>
 
-			<!-- <a-camera look-controls-enabled="true" wasd-controls-enabled="true"
-				cursor-color="#F00" cursor-maxdistance="100" cursor-offset="10"
-				position="0 1.8 4"></a-camera> -->
-
-			<!-- <a-entity id="monster" geometry="primitive: box" material="src: img/tall.jpg"
-				look-at="[camera]"></a-entity> -->
-
-			<!-- <a-light type="ambient"></a-light>
-			<a-light type="directional"></a-light>
-			<a-light type="hemisphere"></a-light>
-			<a-light type="point"></a-light>
-			<a-light type="spot"></a-light> -->
-
-			<!-- <a-entity id="tree" position="10 0 10">
-				<a-sphere color="green" radius="0.5" position="0 1.5 0"></a-sphere>
-				<a-cylinder color="brown" radius="0.2" height="1" position="0 0.5 0"></a-cylinder>
-			</a-entity> -->
-			<!-- <a-entity geometry="primitive: box; depth: 1; height: 1; width: 1"
-				material="color: pink"
-				light="intensity: 2"
-				position="-1 5 0"
-				sound="src: dangerzone.mp3; volume: 2"></a-entity> -->
-			<!-- <a-cube color="yellow">
-				<a-animation attribute="rotation" from="0 0 0" to="0 270 0" repeat="indefinite" easing="linear"></a-animation>
-			</a-cube> -->
+			</a-entity>
 		</a-scene>
 		<script src="index.js"></script>
 	</body>
