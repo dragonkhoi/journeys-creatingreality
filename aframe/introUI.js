@@ -29,5 +29,6 @@ function hideStoryHover(){
 
 function startJourney(){
   document.getElementById("introScreen").style.display = "none";
+  document.getElementById("takePhotoOverlay").style.display = "block";
 
 }
