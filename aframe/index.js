@@ -8,7 +8,13 @@ setTimeout(function(){
   console.log(JOURNEY.wpObjs[0].lat, JOURNEY.wpObjs[0].lng);
   console.log("displaying content markers now");
   JOURNEY.displayMarkers();
-}, 5000);
+}, 6000);
+
+// setTimeout(function(){
+//   JOURNEY.goToNextWaypoint();
+//   console.log("next!");
+//   JOURNEY.displayMarkers();
+// }, 12000);
 
 // returns journey session created from JSON
 function fetchJourney(userID,JTitle) {
