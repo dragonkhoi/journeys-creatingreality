@@ -32,10 +32,52 @@ function createWaypoints(){
 
 // view
 function displayMarkers(){
+  document.getElementById('markers').innerHTML = "";
+  var positionsX = calculatePositions.call(this.wpObjs[this.nextWaypoint].contentPoints);
   for(var i = 0; i < this.wpObjs[this.nextWaypoint].contentPoints.length; i++){
-    this.wpObjs[this.nextWaypoint].contentPoints[i].createMarker();
+    this.wpObjs[this.nextWaypoint].contentPoints[i].createMarker(positionsX[i]);
   }
 }
+
+function calculatePositions() {
+  var positionsX;
+  switch(this.length) {
+    case 1: { 
+      positionsX = [0];
+      break;
+    }
+    case 2: {
+      positionsX = [-2,2];
+      break;
+    }
+    case 3: {
+      positionsX = [-4,0,4];
+      break;
+    }
+    case 4: {
+      positionsX = [-5,-2,2,5];
+      break;
+    }
+    case 5: {
+      positionsX = [-8,-4,0,4,8];
+      break;
+    }
+    case 6: {
+      positionsX = [-8,-5,-2,2,5,8];
+      break;
+    }
+    default: {
+      positionsX = [0];
+    }
+  }
+  return positionsX;
+}
+
+
+// 1 : 0
+// 2 : -2 2
+// 3 :  -2  0  2
+// 4: -2 -1 1 2
 
 
 
