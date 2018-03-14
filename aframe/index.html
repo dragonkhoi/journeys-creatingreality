@@ -26,8 +26,8 @@
 			<img src="../assets/img/design_home_screen.png" width="100%" height="100%"></img>
 			<div style="display: flex; flex-direction: row; justify-content: center">
 				<!-- <button type="button"> -->
-					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton()"></img>
-					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 88%; position: absolute; z-index: 1" onclick="createJourney()"></img>
+					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton(); startVideo()"></img>
+					<img src="../assets/img/text_create_journey.png" style="width: 40%; order:1; top: 88%; position: absolute; z-index: 1" onclick="createJourney(); startVideo()"></img>
 
 					<!-- </button> -->
 			</div>
@@ -81,7 +81,7 @@
 		</div>
 		<div id="takePhotoOverlay" style="display: none">
 			<div id="bottomPhotoBar" style="width: 100%; bottom: 0; position: absolute; text-align: center">
-				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;"> </img>
+				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;" onclick="takeSnapshot()"> </img>
 				<img id="takePhotoHit" src="../assets/img/btn_take_photo_hit.png" style="margin-left:auto; margin-right:auto; display: none; width: 23%; height: auto; padding: 40px"> </img>
 
 			</div>
