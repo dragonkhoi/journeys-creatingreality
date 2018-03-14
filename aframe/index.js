@@ -4,8 +4,11 @@ fetchJourney("U001", "First Award");
 
 setTimeout(function(){
   JOURNEY.createWaypoints();
+  console.log("created waypoints");
   console.log(JOURNEY.wpObjs[0].lat, JOURNEY.wpObjs[0].lng);
-}, 1000);
+  console.log("displaying content markers now");
+  JOURNEY.displayMarkers();
+}, 5000);
 
 // returns journey session created from JSON
 function fetchJourney(userID,JTitle) {
