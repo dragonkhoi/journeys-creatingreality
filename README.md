@@ -9,6 +9,7 @@ Jaxon's local demo server:
 
 Prarthana's local demo server:
 - yo ip
+- https://5a1a39c6.ngrox.io/
 
 Khoi's local demo server:
 - yo ip
