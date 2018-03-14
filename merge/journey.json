@@ -13,12 +13,14 @@
 					"type": "text",
 					"title": "test title",
 					"body": "test body",
+					"distance": 5,
 					"heading": 90
 				},
 				{
 					"type": "image",
 					"url": "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
 					"description": "testarooni image",
+					"distance": 5,
 					"heading": 180
 				}
 			]
