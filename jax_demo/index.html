@@ -7,7 +7,10 @@
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 		<!-- <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
 		<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script> -->
+		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
 		<script src="components/TextMarker.js"></script>
+		<script src="components/ImageMarker.js"></script>
+		<script src="components/WaypointMarker.js"></script>
 	</head>
 	<body>
 		<!-- <div id="info">
@@ -19,16 +22,14 @@
 		</div> -->
 		<a-scene>
 			<a-assets>
-				<a-asset-item id="tree" src="../assets/models/platonic.glb"></a-asset-item>
+				<a-asset-item id="tree" src="../assets/models/speaker2.glb"></a-asset-item>
 			</a-assets>
-			<!-- <a-entity gltf-model="#tree"></a-entity> -->
-			<!-- <a-sky src="#sky"></a-sky> -->
-			<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
-			<!-- <a-sky src="https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/"></a-sky> -->
+			<!-- <a-entity environment="preset: forest;"></a-entity> -->
+			<a-entity gltf-model="#tree" scale="0.01 0.01 0.01" position="0 1 0"></a-entity>
 			<!-- <a-sphere radius="0.01" position="0 0.005 -0.5"></a-sphere> -->
 			<!-- <a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity> -->
-			<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
-			<a-box id="waypoint" position="-1 0.5 -3" scale="1 10 1" rotation="0 0 0" color="#4CC3D9"></a-box>
+			<!-- <a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
+			<a-box id="waypoint" position="-1 0.5 -3" scale="1 10 1" rotation="0 0 0" color="#4CC3D9"></a-box> -->
 			<!-- <a-sphere></a-sphere> -->
 			<!-- <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity> -->
 			<!-- <a-entity id="player"></a-entity> -->
@@ -46,8 +47,7 @@
 			<a-light type="point"></a-light>
 			<a-light type="spot"></a-light> -->
 
-
-			<!-- <a-entity id="tree" position="30 12 86">
+			<!-- <a-entity id="tree" position="10 0 10">
 				<a-sphere color="green" radius="0.5" position="0 1.5 0"></a-sphere>
 				<a-cylinder color="brown" radius="0.2" height="1" position="0 0.5 0"></a-cylinder>
 			</a-entity> -->
