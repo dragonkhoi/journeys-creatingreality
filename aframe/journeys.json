@@ -7,6 +7,56 @@
                     "Waypoints" : [
                         {
                             "Location" : {
+                                "Lat" : 34.020237,
+                                "Lng" : -118.286186
+                            },
+                            "ContentPoints" : [
+                                {
+                                    "Title": "Libraries",
+                                    "Description": "These was my favourite libraries at USC!.", 
+                                    "Type": "text",
+                                    "Ref" : "",
+                                    "Orientation": 180
+                                },
+                                {
+                                    "Title": "Photo when we went on our first date",
+                                    "Description": "We went for ice cream for our first date", 
+                                    "Type" : "image",
+                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+                                    "Orientation": 90
+                                },
+                                {
+                                    "Title": "Photo when we went on our first date",
+                                    "Description": "We went for ice cream for our first date", 
+                                    "Type" : "image",
+                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+                                    "Orientation": 90
+                                },
+                                {
+                                    "Title": "Photo when we went on our first date",
+                                    "Description": "We went for ice cream for our first date", 
+                                    "Type" : "image",
+                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+                                    "Orientation": 90
+                                },
+                                {
+                                    "Title": "Photo when we went on our first date",
+                                    "Description": "We went for ice cream for our first date", 
+                                    "Type" : "image",
+                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+                                    "Orientation": 90
+                                },
+                                {
+                                    "Title": "Photo when we went on our first date",
+                                    "Description": "We went for ice cream for our first date", 
+                                    "Type" : "image",
+                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+                                    "Orientation": 90
+                                }
+                            ]
+                        },
+                        {
+                            "Location" : {
                                 "Lat" : 34.020134,
                                 "Lng" : -118.286297
                             },
@@ -21,57 +71,6 @@
                                 {
                                     "Title": "Photo with my parents",
                                     "Description": "We took a picture together!", 
-                                    "Type" : "image",
-                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "An audio of my award ceremony",
-                                    "Description": "I was awarded a fellowship for my PhD.", 
-                                    "Type": "audio",
-                                    "Ref" : "../model/audio/bensound-anewbeginning.mp3",
-                                    "Orientation" : 45
-                                }
-                            ]
-                        },
-
-                        {
-                            "Location" : {
-                                "Lat" : 34.020237,
-                                "Lng" : -118.286186
-                            },
-                            "ContentPoints" : [
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
-                                    "Type" : "image",
-                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
-                                    "Type" : "image",
-                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
-                                    "Type" : "image",
-                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
-                                    "Type" : "image",
-                                    "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-                                    "Orientation": 90
-                                },
-                                {
-                                    "Title": "Photo when we went on our first date",
-                                    "Description": "We went for ice cream for our first date", 
                                     "Type" : "image",
                                     "Ref" : "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
                                     "Orientation": 90

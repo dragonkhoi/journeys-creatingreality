@@ -34,14 +34,17 @@ function createWaypoints(){
 function displayMarkers(){
   document.getElementById('markers').innerHTML = "";
   var positionsX = calculatePositions.call(this.wpObjs[this.nextWaypoint].contentPoints);
-  for(var i = 0; i < this.wpObjs[this.nextWaypoint].contentPoints.length; i++){
-    this.wpObjs[this.nextWaypoint].contentPoints[i].createMarker(positionsX[i]);
+  this.wpObjs[this.nextWaypoint].contentPoints[0].createMarker(0);
+  for(var i = 1; i < this.wpObjs[this.nextWaypoint].contentPoints.length; i++){
+    console.log(this.wpObjs[this.nextWaypoint].contentPoints[i]);
+    this.wpObjs[this.nextWaypoint].contentPoints[i].createMarker(positionsX[i-1]);
   }
 }
 
 function calculatePositions() {
   var positionsX;
-  switch(this.length) {
+  var imgCount = this.length - 1;
+  switch(imgCount) {
     case 1: { 
       positionsX = [0];
       break;
@@ -51,7 +54,7 @@ function calculatePositions() {
       break;
     }
     case 3: {
-      positionsX = [-4,0,4];
+      positionsX = [-3,3];
       break;
     }
     case 4: {
