@@ -8,7 +8,6 @@ function ContentPoint(type, mediaUri, orientation, description, title) {
   this.createImageMarker = createImageMarker;
   this.createTextMarker = createTextMarker;
   this.createAudioMarker = createAudioMarker;
-  this.calculatePositions = calculatePositions();
 }
 
 
@@ -29,7 +28,7 @@ function createMarker(posX){
 
 function createImageMarker(posX){
   var newEl = document.createElement('a-entity');
-  newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position:" + posX +" 0 -10;");
+  newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position:" + posX +" 1.0 -10;");
   newEl.setAttribute("scale", "1.0 1.0 0.0");
   newEl.setAttribute("look-at", "[camera]");        
   document.getElementById("markers").appendChild(newEl);
@@ -41,7 +40,7 @@ function createTextMarker(posX){
   signpostGeometry.setAttribute("geometry", "primitive: plane; width: auto; height: 0.5");
   signpostGeometry.setAttribute("color", "blue"); 
   signpostGeometry.setAttribute("look-at", "[camera]");  
-  signpostGeometry.setAttribute("position", posX + " 1 -10");
+  signpostGeometry.setAttribute("position", posX + " 2 -10");
   signpostGeometry.setAttribute("text", "value: This text will be  units wide. This text will be  units wide. This text will be  units wide. This text will be  units wide.This text will be  units wide.");  
 
   var signlegGeometry = document.createElement('a-entity');
@@ -54,6 +53,8 @@ function createTextMarker(posX){
   document.getElementById("markers").appendChild(signpostGeometry);  
   document.getElementById("signpostGeometry").appendChild(signlegGeometry); 
 }
-function createAudioMarker(){
-
+function createAudioMarker(posX){
+  var newEl = document.createElement('a-entity');
+  newEl.setAttribute('audio-marker',"audioUri:" + this.mediaUri + "; posX:" + posX);     
+  document.getElementById("markers").appendChild(newEl);
 }

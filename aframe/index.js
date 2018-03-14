@@ -15,17 +15,15 @@ fetchJourney("U001", "First Award");
 
 setTimeout(function(){
   JOURNEY.createWaypoints();
-  console.log("created waypoints");
   console.log(JOURNEY.wpObjs[0].lat, JOURNEY.wpObjs[0].lng);
-  console.log("displaying content markers now");
   JOURNEY.displayMarkers();
 }, 6000);
 
-setTimeout(function(){
-  JOURNEY.goToNextWaypoint();
-  console.log("next!");
-  JOURNEY.displayMarkers();
-}, 12000);
+// setTimeout(function(){
+//   JOURNEY.goToNextWaypoint();
+//   console.log("next!");
+//   JOURNEY.displayMarkers();
+// }, 12000);
 
 // returns journey session created from JSON
 function fetchJourney(userID,JTitle) {
@@ -35,15 +33,12 @@ function fetchJourney(userID,JTitle) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.onreadystatechange = function() {
-      console.log(this.readyState);
         if (this.readyState == 4 && this.status == 200) {
 
             // Read JSON ddata
             jsonObj = JSON.parse(xhttp.responseText);
-            console.log(jsonObj);
             // Check if user exists in JSON file
             if (userID in jsonObj.Users) {
-              console.log("userid is in users");
                 // Check if user has any journeys
                 userJourneys = jsonObj.Users[userID].Journeys;
 
@@ -51,10 +46,8 @@ function fetchJourney(userID,JTitle) {
 
                     //Check if selected journey exists in the user's journey
                     if (JTitle in userJourneys) {
-                      console.log("journey found");
                       // Instantiate objects
                       var journeySesh = new JourneySession(userJourneys[JTitle]);
-                      console.log(journeySesh);
                       JOURNEY = journeySesh;
                       return journeySesh;
                     }
