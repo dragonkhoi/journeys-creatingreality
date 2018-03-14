@@ -30,7 +30,8 @@ function createMarker(posX){
 function createImageMarker(posX){
   var newEl = document.createElement('a-entity');
   newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position:" + posX +" 0 -10;");
-  newEl.setAttribute("scale", "1.0 1.0 0.0");      
+  newEl.setAttribute("scale", "1.0 1.0 0.0");
+  newEl.setAttribute("look-at", "[camera]");        
   document.getElementById("markers").appendChild(newEl);
 }
 function createTextMarker(posX){
@@ -38,13 +39,15 @@ function createTextMarker(posX){
   var signpostGeometry = document.createElement('a-entity');
   signpostGeometry.setAttribute("id", "signpostGeometry");
   signpostGeometry.setAttribute("geometry", "primitive: plane; width: auto; height: 0.5");
-  signpostGeometry.setAttribute("color", "blue");  
+  signpostGeometry.setAttribute("color", "blue"); 
+  signpostGeometry.setAttribute("look-at", "[camera]");  
   signpostGeometry.setAttribute("position", posX + " 1 -10");
   signpostGeometry.setAttribute("text", "value: This text will be  units wide. This text will be  units wide. This text will be  units wide. This text will be  units wide.This text will be  units wide.");  
 
   var signlegGeometry = document.createElement('a-entity');
   signlegGeometry.setAttribute("id", "signlegGeometry");
   signlegGeometry.setAttribute("geometry", "primitive: plane; width: 0.1; height: 2.5");
+  signlegGeometry.setAttribute("look-at", "[camera]");    
   signlegGeometry.setAttribute("color", "blue");  
   signlegGeometry.setAttribute("position", "0 -1 0"); 
 
