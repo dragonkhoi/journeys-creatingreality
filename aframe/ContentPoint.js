@@ -56,11 +56,21 @@ function createTextMarker(){
   signpostGeometry.setAttribute("id", "signpostGeometry");
   signpostGeometry.setAttribute("geometry", "primitive: plane; width: auto; height: 0.5");
   signpostGeometry.setAttribute("color", "blue");  
-  signpostGeometry.setAttribute("position", "0 0 -10");
-  signpostGeometry.setAttribute("scale", "2 2 2");   
+  signpostGeometry.setAttribute("position", "0 1 -10");
+  // signpostGeometry.setAttribute("scale", "2 2 2");   
   signpostGeometry.setAttribute("text", "value: This text will be  units wide. This text will be  units wide. This text will be  units wide. This text will be  units wide.This text will be  units wide.");  
 
+  var signlegGeometry = document.createElement('a-entity');
+  signlegGeometry.setAttribute("id", "signlegGeometry");
+  signlegGeometry.setAttribute("geometry", "primitive: plane; width: 0.1; height: 2.5");
+  signlegGeometry.setAttribute("color", "blue");  
+  signlegGeometry.setAttribute("position", "0 -1 0");
+  // signlegGeometry.setAttribute("scale", "2 2 2");   
+  // signlegGeometry.setAttribute("text", "value: This text will be  units wide. This text will be  units wide. This text will be  units wide. This text will be  units wide.This text will be  units wide.");  
+
+
   document.getElementById("markers").appendChild(signpostGeometry);  
+  document.getElementById("signpostGeometry").appendChild(signlegGeometry); 
 }
 function createAudioMarker(){
 
