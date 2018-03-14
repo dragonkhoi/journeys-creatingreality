@@ -10,11 +10,11 @@ setTimeout(function(){
   JOURNEY.displayMarkers();
 }, 6000);
 
-setTimeout(function(){
-  JOURNEY.goToNextWaypoint();
-  console.log("next!");
-  JOURNEY.displayMarkers();
-}, 12000);
+// setTimeout(function(){
+//   JOURNEY.goToNextWaypoint();
+//   console.log("next!");
+//   JOURNEY.displayMarkers();
+// }, 12000);
 
 // returns journey session created from JSON
 function fetchJourney(userID,JTitle) {

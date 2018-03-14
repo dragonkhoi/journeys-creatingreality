@@ -2,7 +2,6 @@ AFRAME.registerComponent('audio-marker', {
     schema: {
       audioUri: { type: 'string', default: '../model/audio/SoundHelix-Song-9.mp3' },
       audioDescription: { type: 'string', default: 'I love this song!' },
-    //   audioIcon: { type: 'string', default: 'http://www.eenewsanalog.com/sites/default/files/styles/inner_article/public/sites/default/files/images/audioicon700.jpg?itok=vePxeMyn' },
     //   width: { type: 'number', default: 1 },
     //   height: { type: 'number', default: 1 },
     //   planeColor: { type: 'color', default: "#333"},
