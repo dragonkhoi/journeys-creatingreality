@@ -14,6 +14,10 @@ public class CollisionHandler : MonoBehaviour {
         WaypointObj wpObj = GetComponentInParent<WaypointObj>();
         foreach(GameObject go in wpObj.contentPointGOs)
         {
+            if(go.GetComponent<Speaker>() != null)
+            {
+                go.GetComponent<Speaker>().PlaySounds();
+            }
             if(go.tag == "SignPrefab")
             {
                 TrackableHit hit;
