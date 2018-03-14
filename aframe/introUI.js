@@ -8,17 +8,17 @@ window.onload = function() {
     hideStoryHover();
   }, false);
 
-   var plusButton = document.querySelector("#expandShareMenu");
-  plusButton.addEventListener("touchstart", function(event){
-    showPlusHit();
-  }, false);
-  var plusButtonHit = document.querySelector("#expandShareMenuHit");
-  plusButtonHit.addEventListener("touchend", function(event){
-    activateShareMenu();
-  }, false);
-  plusButtonHit.addEventListener("touchstart", function(event){
-    closeShareMenu();
-  }, false);
+  //  var plusButton = document.querySelector("#expandShareMenu");
+  // plusButton.addEventListener("touchstart", function(event){
+  //   showPlusHit();
+  // }, false);
+  // var plusButtonHit = document.querySelector("#expandShareMenuHit");
+  // plusButtonHit.addEventListener("touchend", function(event){
+  //   activateShareMenu();
+  // }, false);
+  // plusButtonHit.addEventListener("touchstart", function(event){
+  //   closeShareMenu();
+  // }, false);
 }
 
 function showPlusHit(){
@@ -29,6 +29,7 @@ function showPlusHit(){
 }
 
 function activateShareMenu(){
+  console.log("sharemenu");
   var plusButtonHit = document.querySelector("#expandShareMenuHit");
   plusButtonHit.style.display = "block";
   var shareButtonBar = document.querySelector("#shareButtonBar");
@@ -36,11 +37,16 @@ function activateShareMenu(){
 }
 
 function closeShareMenu(){
+  console.log("close sharemenu");
+
   var plusButtonHit = document.querySelector("#expandShareMenuHit");
   if(plusButtonHit.style.display == "block"){
     plusButtonHit.style.display = "none";
     var shareButtonBar = document.querySelector("#shareButtonBar");
     shareButtonBar.style.display = "none";
+  }
+  else {
+    activateShareMenu();
   }
 }
 
@@ -89,10 +95,11 @@ function activateCamera(){
 
   }
 }
+
 function createJourney(){
   CREATING = true;
   START = true;
-  console.log("start button hit");
+  console.log("create button hit");
   document.getElementById("homescreen").style.display = "none";
   document.getElementById("waypointAdder").style.display = "block";
 }
@@ -111,9 +118,14 @@ function showStoryHover(){
 function hideStoryHover(){
   setTimeout(function(){
     document.getElementById("journeySelect").style.display = "none";
-    document.getElementById("introScreen").style.display = "block";
+    document.getElementById("hitStartPanel").style.display = "block";
 
   }, 300);
+}
+
+function showIntroScreen(){
+  document.getElementById("hitStartPanel").style.display = "none";
+  document.getElementById("introScreen").style.display = "block";
 }
 
 function startJourney(){

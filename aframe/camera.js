@@ -1,5 +1,5 @@
 var video;
-window.onload = function(){
+function startVideo(){
   video = document.querySelector('#camera-stream');
   navigator.getMedia = ( navigator.getUserMedia || navigator.webkitGetUserMedia ||
     navigator.mozGetUserMedia ||
@@ -49,7 +49,7 @@ function takeSnapshot(){
   cameraButtonHit.style.display = "none";
   var hidden_canvas = document.getElementById("photoLayer"),
     image = document.querySelector('#photoDisplay'),
-
+    video = document.getElementById('camera-stream'),
     width = video.videoWidth,
     height = video.videoHeight,
 

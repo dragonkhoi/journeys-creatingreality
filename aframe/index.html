@@ -26,8 +26,8 @@
 			<img src="../assets/img/design_home_screen.png" width="100%" height="100%"></img>
 			<div style="display: flex; flex-direction: row; justify-content: center">
 				<!-- <button type="button"> -->
-					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton()"></img>
-					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 88%; position: absolute; z-index: 1" onclick="createJourney()"></img>
+					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton(); startVideo()"></img>
+					<img src="../assets/img/text_create_journey.png" style="width: 40%; order:1; top: 88%; position: absolute; z-index: 1" onclick="createJourney(); startVideo()"></img>
 
 					<!-- </button> -->
 			</div>
@@ -36,6 +36,12 @@
 			<img src="../assets/img/design_selection_screen.png" width="100%" height="100%"></img>
 			<img id="showStory" src="../assets/img/btn_journey_unselected.png" style="top: 22%; left: 6.7%; width: 40.1%; position: absolute; " onclick="showStoryHover()"></img>
 			<img id="showStoryPlus" src="../assets/img/btn_journey_select.png" style="top: 22%; left: 6.7%; width: 40.1%; position: absolute; z-index: 2; display: none" onmouseup="hideStoryHover()"></img>
+		</div>
+		<div id="hitStartPanel" style="display: none">
+			<div class="bottomPanelBar" style="width: 100%; bottom: 0; position: absolute; text-align: center">
+				<img src="../assets/img/panel_starting_point.png" style="width: 60%;" onclick="showIntroScreen()"></img>
+			</div>
+
 		</div>
 		<div id="waypointAdder" style="display: none">
 			<div id="waypointPlusOverlay">
@@ -81,7 +87,7 @@
 		</div>
 		<div id="takePhotoOverlay" style="display: none">
 			<div id="bottomPhotoBar" style="width: 100%; bottom: 0; position: absolute; text-align: center">
-				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;"> </img>
+				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;" onclick="takeSnapshot()"> </img>
 				<img id="takePhotoHit" src="../assets/img/btn_take_photo_hit.png" style="margin-left:auto; margin-right:auto; display: none; width: 23%; height: auto; padding: 40px"> </img>
 
 			</div>
@@ -94,7 +100,7 @@
 
 		</div>
 	</div>
-	<a-scene ar>
+	<a-scene id="sceneContainer" ar>
 		<!-- <a-assets> -->
 			<!-- <img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/"> -->
 			<!-- large.jpg, above is small.jpg
@@ -126,7 +132,7 @@
 		<!-- <a-cube width="3" height="4" color="red" position="0 0.005 -3"></a-cube> -->
 
 
-		<a-entity id="markers"></a-entity> </a-entity>
+		<a-entity id="markers"></a-entity>
 		<!-- <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity> -->
 		<!-- <a-entity id="player"></a-entity> -->
 
