@@ -10,26 +10,30 @@ function ContentPoint(type, mediaUri, orientation, description, title) {
   this.createAudioMarker = createAudioMarker;
 }
 
+
 function createMarker(){
   if(this.type == "image"){
+    console.log("image");
     this.createImageMarker();
   }
   else if(this.type == "text"){
+    console.log("text");
     this.createTextMarker();
   }
   else if(this.type == "audio"){
+    console.log("audio");
     this.createAudioMarker();
   }
 }
 
 function createImageMarker(){
-  var newEl = document.createElement('a-img');
-  newEl.setAttribute("src", this.mediaUri);
+  var newEl = document.createElement('a-entity');
+  newEl.setAttribute('img-marker',"imgUri:" + this.mediaUri + ";position: 0 0.005 -200");
   document.getElementById("markers").appendChild(newEl);
 }
 function createTextMarker(){
   var newEl = document.createElement('a-entity');
-  newEl.setAttribute("text-marker", "message: " + this.mediaUri + ";");
+  newEl.setAttribute("text-marker", "message: " + this.description + ";");
   document.getElementById("markers").appendChild(newEl);
 }
 function createAudioMarker(){

@@ -16,6 +16,7 @@ function goToNextWaypoint(){
 }
 
 function createWaypoints(){
+  console.log(this);
   for(var i = 0; i < this.waypoints.length; i++){
     var curWP = this.waypoints[i];
     var newContentPoints = [];
@@ -31,9 +32,19 @@ function createWaypoints(){
 
 // view
 function displayMarkers(){
-  for(var i = 0; i < this.wpObjs[this.nextWaypoint].length; i++){
-    //display each
+  for(var i = 0; i < this.wpObjs[this.nextWaypoint].contentPoints.length; i++){
+    this.wpObjs[this.nextWaypoint].contentPoints[i].createMarker();
   }
 }
 
+
+
+// function displayContent(){
+//   for(var i = 0; i < this.wpObjs[this.nextWaypoint].ContentPoints.length; i++){
+//     console.log(this.wpObjs[this.nextWaypoint].ContentPoints[i]);
+//   }
+// }
+// createWaypoints();
+// console.log("testing content display");
+// displayContent(wpObjs[0]);
 // fetchJourney("U001","First Award");
