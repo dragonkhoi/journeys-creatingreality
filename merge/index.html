@@ -5,22 +5,22 @@
 		<title>i frame u frame we all frame for a frame</title>
 		<link href="index.css" rel="stylesheet">
 		<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-		<!-- <script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
-		<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script> -->
+		<script src="https://rawgit.com/google-ar/three.ar.js/master/dist/three.ar.js"></script>
+		<script src="https://rawgit.com/chenzlabs/aframe-ar/master/dist/aframe-ar.js"></script>
 		<script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
-		<!-- <script src=""></script> -->
 		<script src="components/TextMarker.js"></script>
 		<script src="components/ImageMarker.js"></script>
 		<script src="components/WaypointMarker.js"></script>
 		<script src="Geo.js"></script>
 	</head>
 	<body>
-		<a-scene>
+		<!-- <a-scene> -->
 		<!-- <a-scene arjs> -->
-		<!-- <a-scene ar> -->
+		<a-scene ar>
 			<a-assets>
 				<a-asset-item id="tree" src="../assets/models/speaker2.glb"></a-asset-item>
 			</a-assets>
+			<a-entity id="wrapper"></a-entity>
 		</a-scene>
 		<script src="index.js"></script>
 	</body>
