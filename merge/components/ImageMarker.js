@@ -9,7 +9,7 @@ AFRAME.registerComponent('image-marker', {
     position: { type: 'string', default: "0 0 0"},
   },
   init: function(){
-    this.el.setAttribute("geometry", "width: 2.5; height: 2.5")
+    this.el.setAttribute("geometry", "width: 2.5; height: 2.5; depth: 0;")
     this.el.setAttribute("material", "src:" + this.data.imgUri)
     this.el.setAttribute("look-at", "a-camera")
   },
