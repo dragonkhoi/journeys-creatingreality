@@ -43,8 +43,6 @@ Geo = function Geo( zones ) {
 		// console.log( "geo error " + error.code )
 	}.bind( this )
 
-
-
 	// navigator.geolocation.getCurrentPosition( geoSuccess, geoError, geoOptions )
 	this.watchID = navigator.geolocation.watchPosition( this.geoSuccess, this.geoError, this.geoOptions )
 }
