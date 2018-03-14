@@ -1,19 +1,33 @@
+window.onload = function() {
+  var showStory = document.getElementById("showStory");
+  showStory.addEventListener("touchstart", function(event){
+    showStoryHover();
+  }, false);
+  var showStoryPlus = document.getElementById("showStoryPlus");
+  showStoryPlus.addEventListener("touchend", function(event){
+    hideStoryHover();
+  }, false);
+}
+
 function startButton(){
   console.log("start button hit");
   document.getElementById("homescreen").style.display = "none";
   document.getElementById("journeySelect").style.display = "block";
-
 }
 
 function showStoryHover(){
-  console.log("switch to plus");
-  document.getElementById("showStoryPlus").style.display = "block"; // = "../assets/img/btn_journey_select.png";
+  document.getElementById("showStoryPlus").style.display = "block";
 }
 
 function hideStoryHover(){
-  console.log("switch back");
-  //document.getElementById("showStoryPlus").style.display = "none"; // = "../assets/img/btn_journey_select.png";
   setTimeout(function(){
     document.getElementById("journeySelect").style.display = "none";
-  }, 800);
+    document.getElementById("introScreen").style.display = "block";
+
+  }, 300);
+}
+
+function startJourney(){
+  document.getElementById("introScreen").style.display = "none";
+
 }
