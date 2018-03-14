@@ -57,13 +57,4 @@ function createAudioMarker(posX){
   var newEl = document.createElement('a-entity');
   newEl.setAttribute('audio-marker',"audioUri:" + this.mediaUri + "; posX:" + posX);     
   document.getElementById("markers").appendChild(newEl);
-
-  var audioIcon = document.createElement('a-entity');
-  audioIcon.setAttribute("id", "audioIcon");
-  audioIcon.setAttribute("gltf-model", "#audioAsset");
-  audioIcon.setAttribute("position", posX + " 1 -10");
-  audioIcon.setAttribute("scale", "0.01 0.01 0");
-  document.getElementById("markers").appendChild(audioIcon);
-
-
 }

@@ -11,12 +11,13 @@
 	<script src="components/TextMarker.js"></script>
 	<script src="components/ImageMarker.js"></script>
 	<script src="components/AudioMarker.js"></script>
-	<script src="introUI.js"></script>
 	<script src="camera.js"></script>
 	<script src="ContentPoint.js"></script>
 	<script src="Waypoint.js"></script>
 	<script src="JourneySession.js"></script>
 	<script src="index.js"></script>
+	<script src="introUI.js"></script>
+
 </head>
 <body>
 	<canvas id="photoLayer" style="display: none"> </canvas>
@@ -26,13 +27,33 @@
 			<div style="display: flex; flex-direction: row; justify-content: center">
 				<!-- <button type="button"> -->
 					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton()"></img>
+					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 88%; position: absolute; z-index: 1" onclick="createJourney()"></img>
+
 					<!-- </button> -->
 			</div>
 		</div>
 		<div id="journeySelect" style="display: none">
 			<img src="../assets/img/design_selection_screen.png" width="100%" height="100%"></img>
-			<img id="showStory" src="../assets/img/btn_journey_unselected.png" style="top: 25.8%; left: 6.7%; width: 40.1%; position: absolute; " onclick="showStoryHover()"></img>
-			<img id="showStoryPlus" src="../assets/img/btn_journey_select.png" style="top: 25.8%; left: 6.7%; width: 40.1%; position: absolute; z-index: 2; display: none" onmouseup="hideStoryHover()"></img>
+			<img id="showStory" src="../assets/img/btn_journey_unselected.png" style="top: 22%; left: 6.7%; width: 40.1%; position: absolute; " onclick="showStoryHover()"></img>
+			<img id="showStoryPlus" src="../assets/img/btn_journey_select.png" style="top: 22%; left: 6.7%; width: 40.1%; position: absolute; z-index: 2; display: none" onmouseup="hideStoryHover()"></img>
+		</div>
+		<div id="waypointAdder" style="display: none">
+			<div id="waypointPlusOverlay">
+				<div id="waypointTopPlusBar" style="top: 0; width: 100%; position: absolute">
+					<div id="waypointPlusButtonContainer" style="max-height: 10%">
+						<img id="waypointExpandShareMenu" src="../assets/img/button_share_inactive.png" style="width: 13%; padding: 20px; z-index: 2; position: absolute" onclick="activateWaypointMenu()"></img>
+						<img id="waypointExpandShareMenuHit" src="../assets/img/button_share_active.png" style="width: 13%; padding: 20px; display: none; z-index: 2; position: absolute" onclick="closeWaypointMenu()"></img>
+					</div>
+					<div id="waypointShareButtonBar" style="display: none; left: 70px; top: 0; width: 100%; position: absolute">
+						<img id="waypointTakePhotoBar" src="../assets/img/button_share_expanded.png" style="width: 70%; padding: 20px; position: absolute"></img>
+						<img id="waypointTakePhotoText" src="../assets/img/text_take_selfie.png" style="width: 18%; left:30px; top: 40px; position: absolute" onclick="activateWaypointCamera()"></img>
+						<img id="waypointTakePhotoTextBlack" src="../assets/img/text_take_selfie_hit.png" style="width: 18%; left:30px; top: 40px; position: absolute; display: none" onclick="activateWaypointCamera()"></img>
+
+						<img id="waypointAddNoteText" src="../assets/img/text_add_note.png" style="width: 18%; left:120px; top: 40px; position: absolute"></img>
+						<img id="waypointAddVoiceText" src="../assets/img/text_add_voice.png" style="width: 18%; left:210px; top: 40px; position: absolute"></img>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div id="introScreen" style="display: none">
 			<img src="../assets/img/design_journey_profile.png" width="100%" height="100%"></img>
