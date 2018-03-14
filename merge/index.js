@@ -54,6 +54,13 @@ function init() {
 		waypointEls.push( waypointEl )
 		wrapper.appendChild( waypointEl )
 	}
+	geo.onUpdate = function onUpdate( position ) {
+		console.log( position.coords )
+		for ( let waypointEl of waypointEls ) {
+			waypointEl.setAttribute( "waypoint-marker", "userCoords", { x: position.coords.latitude, y: position.coords.longitude } )
+		}
+	}
+
 }
 
 function loadWaypoint( waypoint ) {
@@ -63,14 +70,13 @@ function loadWaypoint( waypoint ) {
 		switch ( content.type ) {
 			case "text":
 				tmp = document.createElement( "a-entity" )
-				tmp.setAttribute( "text-marker", `message: ${content.body}; heading: ${content.heading}` )
+				tmp.setAttribute( "text-marker", `message: ${content.body}; distance: ${content.distance}; heading: ${content.heading}` )
 				console.log( "making some text" )
 				// append to anchor
 				break
 			case "image":
 				tmp = document.createElement( "a-entity" )
-				tmp.setAttribute( "image-marker", `imgUri: ${content.url}; imgDescription: ${content.description}` )
-				
+				tmp.setAttribute( "image-marker", `imgUri: ${content.url}; imgDescription: ${content.description}; distance: ${content.distance}; heading: ${content.heading};` )
 				console.log( "making some image" )
 				// append to anchor
 				break
@@ -82,8 +88,18 @@ function loadWaypoint( waypoint ) {
 }
 
 function cleanup() {
-	console.log( "cleaning up" )
-	for ( let node of anchor.childNodes ) {
-		anchor.removeChild( node )
+
+	console.log( "cleaning up ", anchor.childNodes )
+	// anchor.removeChild( anchor.childNodes[0] )
+	// anchor.removeChild( anchor.childNodes[0] )
+	while ( anchor.firstChild ) {
+		anchor.removeChild( anchor.firstChild )
 	}
+	// for ( let node of anchor.childNodes ) {
+	// 	console.log( "removing ", node )
+	// 	node.remove()
+
+		// node.parentNode.removeChild( node )
+		// anchor.removeChild( node )
+	// }
 }
