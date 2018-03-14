@@ -13,51 +13,6 @@ AFRAME.registerComponent( "waypoint-marker", {
 		coords: { type: "vec2", default: "0 0" },
 	},
 	init: function () {
-		Math.radians = degrees => ( degrees * ( Math.PI * 2 ) ) / 360
-		Math.degrees = radians => ( radians * 360 ) / ( Math.PI * 2 )
-
-		this.getBearing = function getBearing( coords1, coords2 ) {
-			const lat1 = Math.radians( coords1.x ) // lat
-			const lon1 = Math.radians( coords1.y ) // lon
-			const lat2 = Math.radians( coords2.x ) // lat
-			const lon2 = Math.radians( coords2.y ) // lon
-			const y = Math.sin( lon2 - lon1 ) * Math.cos( lat2 )
-			const x =
-				Math.cos( lat1 ) * Math.sin( lat2 ) -
-				Math.sin( lat1 ) * Math.cos( lat2 ) * Math.cos( lon2 - lon1 )
-			const bearing = Math.degrees( Math.atan2( y, x ) )
-			return ( bearing + 360 ) % 360 // degrees, -180 to 180, normalize with modulo
-		}
-
-		// Math.radians = function(degrees) {
-		//   return degrees * Math.PI / 180;
-		// };
-		//
-		// // Converts from radians to degrees.
-		// Math.degrees = function(radians) {
-		//   return radians * 180 / Math.PI;
-		// }
-
-		// log( Math.degrees( Math.PI ) )
-		// log( Math.radians( 180 ) )
-
-		this.getDistance = function getDistance( coords1, coords2 ) {
-			// haversine
-			var earthRadius = 6371e3 // meters
-			var lat1 = Math.radians( coords1.x ) // lat
-			var lat2 = Math.radians( coords2.x ) // lat
-			var dLat = Math.radians( ( coords2.x - coords1.x ) ) // lat - lat
-			var dLon = Math.radians( ( coords2.y - coords1.y ) ) // lon - lon
-			var a =
-				Math.sin( dLat / 2 ) * Math.sin( dLat / 2 ) +
-				Math.cos( lat1 ) * Math.cos( lat2 ) *
-				Math.sin( dLon / 2 ) * Math.sin( dLon / 2 )
-			var c = 2 * Math.atan2( Math.sqrt( a ), Math.sqrt( 1-a ) )
-			var distance = earthRadius * c
-			// console.log( "getDistance", lat1, lat2, dLat, dLon )
-			return distance // meters
-		}
-
 		// this.el.setAttribute( "text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center" )
 		this.el.setAttribute( "geometry", "primitive: box; width: 10; height: 100; depth: 10;" )
 		this.el.setAttribute( "material", "color", this.data.color )

@@ -19,7 +19,7 @@ setTimeout(function(){
 // returns journey session created from JSON
 function fetchJourney(userID,JTitle) {
 
-    var jsonURL = "../model/json/journeys.json";
+    var jsonURL = "journeys.json";
 
     var xhttp = new XMLHttpRequest();
 

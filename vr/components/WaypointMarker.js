@@ -78,7 +78,7 @@ AFRAME.registerComponent( "waypoint-marker", {
 		if ( userCoords !== null ) {
 
 			const bearing = this.getBearing( userCoords, coords )
-			// console.log( this.data.name, bearing )
+			console.log( this.data.name, bearing )
 			const distance = this.getDistance( userCoords, coords )
 			const x = distance * Math.sin( Math.radians( bearing ) )
 			const y = 0.5

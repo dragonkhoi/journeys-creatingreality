@@ -1,0 +1,91 @@
+{
+	"name": "my journey",
+	"waypoints": [
+		{
+			"name": "ballroom",
+			"color": "black",
+			"coords": {
+				"latitude": 34.020096,
+				"longitude": -118.28613
+			},
+			"contents": [
+				{
+					"type": "text",
+					"title": "test title",
+					"body": "test body",
+					"heading": 90
+				},
+				{
+					"type": "image",
+					"url": "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
+					"description": "testarooni image",
+					"heading": 180
+				}
+			]
+		},
+		{
+			"name": "testination",
+			"color": "yellow",
+			"coords": {
+				"latitude": 34.020187,
+				"longitude": -118.28584
+			}
+		},
+		{
+			"name": "north",
+			"color": "red",
+			"coords": {
+				"latitude": 34.025436,
+				"longitude": -118.28651
+			}
+		},
+		{
+			"name": "east",
+			"color": "green",
+			"coords": {
+				"latitude": 34.02,
+				"longitude": -118.28092
+			}
+		},
+		{
+			"name": "south",
+			"color": "white",
+			"coords": {
+				"latitude": 34.01431,
+				"longitude": -118.28608
+			}
+		},
+		{
+			"name": "west",
+			"color": "blue",
+			"coords": {
+				"latitude": 34.020638,
+				"longitude": -118.29282
+			}
+		},
+		{
+			"name": "fander's pork 🌳",
+			"color": "red",
+			"coords": {
+				"latitude": 34.021492,
+				"longitude": -118.28485
+			}
+		},
+		{
+			"name": "ol' starbsy",
+			"color": "brown",
+			"coords": {
+				"latitude": 34.01856,
+				"longitude": -118.28185
+			}
+		},
+		{
+			"name": "cooliseum 😎",
+			"color": "black",
+			"coords": {
+				"latitude": 34.014034,
+				"longitude": -118.28786
+			}
+		}
+	]
+}
