@@ -10,13 +10,36 @@
 	<script src="components/TextMarker.js"></script>
 	<script src="components/ImageMarker.js"></script>
 	<script src="components/AudioMarker.js"></script>
-
+	<script src="introUI.js"></script>
 	<script src="ContentPoint.js"></script>
 	<script src="Waypoint.js"></script>
 	<script src="JourneySession.js"></script>
 	<script src="index.js"></script>
 </head>
 <body>
+	<div class="overlay" style="position:absolute; width: 100%; height: 100%; z-index: 1">
+		<div id="homescreen" style="display: block">
+			<img src="../assets/img/design_home_screen.png" width="100%" height="100%"></img>
+			<div style="display: flex; flex-direction: row; justify-content: center">
+				<!-- <button type="button"> -->
+					<img src="../assets/img/btn_start.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startButton()"></img>
+					<!-- </button> -->
+			</div>
+		</div>
+		<div id="journeySelect" style="display: none">
+			<img src="../assets/img/design_selection_screen.png" width="100%" height="100%"></img>
+			<img id="showStory" src="../assets/img/btn_journey_unselected.png" style="top: 25.8%; left: 6.7%; width: 40.1%; position: absolute; " onclick="showStoryHover()"></img>
+			<img id="showStoryPlus" src="../assets/img/btn_journey_select.png" style="top: 25.8%; left: 6.7%; width: 40.1%; position: absolute; z-index: 2; display: none" onmouseup="hideStoryHover()"></img>
+		</div>
+		<div id="introScreen" style="display: none">
+			<img src="../assets/img/design_journey_profile.png" width="100%" height="100%"></img>
+			<div style="display: flex; flex-direction: row; justify-content: center">
+				<!-- <button type="button"> -->
+					<img src="../assets/img/btn_begin_walking.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startJourney()"></img>
+					<!-- </button> -->
+			</div>
+		</div>
+	</div>
 	<a-scene ar>
 		<a-assets>
 			<!-- <img id="sky" src="https://ucarecdn.com/127de347-e009-4d23-bd93-502782ffaff2/"> -->
@@ -28,11 +51,12 @@
 		<a-entity text-marker="message: hellooo world; position: 0 0.005 -1"></a-entity>
 		<a-entity text="value: Hello World;" position="0 0.005 -2"></a-entity>
 		<a-entity audio-marker="position: 0 0.005 -0.5"></a-entity>
-
+		<a-entity image-marker="position: 0 0.005 -0.5"></a-entity>
 		<!-- <a-sky src="#sky"></a-sky> -->
 		<!-- <a-sky src="https://aframe.io/aframe/examples/_skies/lake.jpg"></a-sky> -->
 		<!-- <a-sky src="https://ucarecdn.com/59a41188-f053-4657-8c69-51c3a677de33/"></a-sky> -->
 		<a-cube width="3" height="4" color="red" position="0 0.005 -3"></a-cube>
+		<a-entity id="markers"> </a-entity>
 		<!-- <a-entity geometry="primitive: box; width: 3" material="color: red"></a-entity> -->
 		<!-- <a-entity id="player"></a-entity> -->
 

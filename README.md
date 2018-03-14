@@ -1,14 +1,17 @@
 # journeys-creatingreality
 
 ### Demos
-External demo server:  
+Jaxon's external demo server:  
 - http://jbjw.ngrok.io/
 
 Jaxon's local demo server:
 - http://10.123.3.120/
 
 Prarthana's local demo server:
-- yo ip
+- http://10.123.1.83/
+
+Prarthana's external demo server:
+- https://5a1a39c6.ngrox.io/
 
 Khoi's local demo server:
 - yo ip
