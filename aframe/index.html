@@ -11,12 +11,14 @@
 	<script src="components/ImageMarker.js"></script>
 	<script src="components/AudioMarker.js"></script>
 	<script src="introUI.js"></script>
+	<script src="camera.js"></script>
 	<script src="ContentPoint.js"></script>
 	<script src="Waypoint.js"></script>
 	<script src="JourneySession.js"></script>
 	<script src="index.js"></script>
 </head>
 <body>
+	<canvas id="photoLayer" style="display: none"> </canvas>
 	<div class="overlay" style="position:absolute; width: 100%; height: 100%; z-index: 1">
 		<div id="homescreen" style="display: block">
 			<img src="../assets/img/design_home_screen.png" width="100%" height="100%"></img>
@@ -38,6 +40,20 @@
 					<img src="../assets/img/btn_begin_walking.png" style="width: 60%; order:1; top: 78%; position: absolute; z-index: 1" onclick="startJourney()"></img>
 					<!-- </button> -->
 			</div>
+		</div>
+		<div id="takePhotoOverlay" style="display: none">
+			<div id="bottomPhotoBar" style="width: 100%; bottom: 0; position: absolute; text-align: center">
+				<img id="takePhoto" src="../assets/img/btn_take_photo.png" style="margin-left:auto; margin-right:auto; width: 23%; height: auto; padding: 40px;"> </img>
+				<img id="takePhotoHit" src="../assets/img/btn_take_photo_hit.png" style="margin-left:auto; margin-right:auto; display: none; width: 23%; height: auto; padding: 40px"> </img>
+
+			</div>
+			<div id="bottomPhotoResults" style="width: 100%; bottom: 0; position: absolute; text-align: center; display: none">
+				<img id="photoDisplay" style="width: 30%" style="display: none; margin-right: 0"> </img>
+				<img id="photoSaved" src="../assets/img/panel_photo_saved.png" title="Photo Saved" style="display: none; width: 50%; margin-left:auto; margin-right:auto;"></img>
+				<a id="dl-btn" href="#" download="journey_memory.png" style="display: none"> Save Photo </a>
+			</div>
+			<video id="camera-stream" style="display: none"></video>
+
 		</div>
 	</div>
 	<a-scene ar>

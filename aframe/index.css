@@ -37,3 +37,19 @@ canvas {
 	top: 0;
 	left: 0;
 }
+
+#bottomPhotoResults {
+	-webkit-animation-name: slideFromBottom;
+	-webkit-animation-duration: 0.4s;
+	animation-name: slideFromBottom;
+	animation-duration: 0.4s;
+}
+
+@-webkit-keyframes slideFromBottom {
+	from {bottom: -300px; opacity: 0}
+	to {bottom: 50; opacity: 1}
+}
+@keyframes slideFromBottom {
+	from {bottom: -300px; opacity: 0}
+	to {bottom: 50; opacity: 1}
+}
