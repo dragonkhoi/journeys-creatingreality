@@ -18,13 +18,6 @@
 				},
 				{
 					"type": "image",
-					"url": "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
-					"description": "testarooni image",
-					"distance": 5,
-					"heading": 180
-				},
-				{
-					"type": "image",
 					"url": "../assets/img/USC_photo_07.png",
 					"description": "testarooni image",
 					"distance": 5,
@@ -43,6 +36,44 @@
 					"description": "testarooni image",
 					"distance": 5,
 					"heading": 60
+				}
+			]
+		},
+		{
+			"name": "Campus center",
+			"color": "black",
+			"coords": {
+				"latitude": 33.0202336,
+				"longitude": -118.2863511
+			},
+			"contents": [
+				{
+					"type": "text",
+					"title": "test title",
+					"body": "The center of campus was my favourite spot! I used to cycle along and admire the views while enjoying the sunshine.",
+					"distance": 5,
+					"heading": 0
+				},
+				{
+					"type": "image",
+					"url": "This was my favorite library to study for exams with my friends. I have spent countless nights here.",
+					"description": "../assets/img/USC_photo_01.png",
+					"distance": 5,
+					"heading": 180
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_07.png",
+					"description": "../assets/img/USC_photo_02.png",
+					"distance": 5,
+					"heading": -60
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_08.png",
+					"description": "../assets/img/USC_photo_03.png",
+					"distance": 5,
+					"heading": 0
 				}
 			]
 		},
