@@ -9,12 +9,14 @@ AFRAME.registerComponent('image-marker', {
     position: { type: 'string', default: "0 0 0"},
   },
   init: function(){
-    this.el.setAttribute("geometry", "width: 2.5; height: 2.5; depth: 0;")
+    // this.el.setAttribute( "scale", "1 1 1" )
+    this.el.setAttribute("geometry", "width: 2.5; height: 2.5; depth: 1;")
     this.el.setAttribute("material", "src:" + this.data.imgUri)
-    this.el.setAttribute("look-at", "a-camera")
+    this.el.setAttribute("look-at", "[camera]")
   },
   update: function(){
-    this.el.object3D.position.set( 0, 0, -this.data.distance )
+
+    this.el.object3D.position.set( 0, 2, -this.data.distance )
     this.el.object3D.position.applyAxisAngle( new THREE.Vector3( 0, 1, 0 ), Math.radians( this.data.heading ) )
     // console.log( this.el.object3D.position )
   }

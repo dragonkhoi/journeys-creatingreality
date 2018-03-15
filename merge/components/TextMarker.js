@@ -8,13 +8,30 @@ AFRAME.registerComponent('text-marker', {
     position: { type: 'string', default: "0 0 0" },
     distance: { type: 'number', default: 5 },
     heading: { type: 'number', default: 0 },
+    plateColor: { type: 'color', default: "#B8860B" },
+    postColor: { type: 'color', default: "#f8f8f8" },
   },
   init: function(){
-    this.el.setAttribute("text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center");
+    // this.el.setAttribute("text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center")
     // this.el.setAttribute("geometry", "primitive: plane; width:" + this.data.width + "; height:" + this.data.height);
-    this.el.setAttribute("geometry", "primitive: plane; width:" + this.data.width + "height: auto");
-    this.el.setAttribute("material", "color: " + this.data.planeColor);
-    this.el.setAttribute("look-at", "a-camera")
+    // this.el.setAttribute("geometry", "primitive: plane; width:" + this.data.width + "height: auto")
+    // this.el.setAttribute("material", "color: #f8f8f8;" )
+    this.el.setAttribute("look-at", "[camera]")
+
+    const signPlate = document.createElement( "a-entity" )
+    signPlate.setAttribute("geometry", "primitive: plane; width: auto; height: 0.3")
+    signPlate.setAttribute("material", `color: ${this.data.color}`)
+    signPlate.setAttribute("scale", "6.0 6.0 0.0")
+    signPlate.setAttribute("text", "value:" + this.data.message + "; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;")
+
+    const signPost = document.createElement( "a-entity" )
+    signPost.setAttribute("geometry", "primitive: plane; width: 0.05; height: 1.0")
+    signPost.setAttribute("material", "color: #1e1e1e")
+    signPost.setAttribute("position", "0 -0.5 -100")
+
+    signPlate.appendChild( signPost )
+
+    this.el.appendChild( signPlate )
   },
   update: function(){
     this.el.object3D.position.set( 0, 0, -this.data.distance )

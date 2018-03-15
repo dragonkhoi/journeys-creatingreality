@@ -30,11 +30,14 @@ function init() {
 
 	geo.onEnter = function onEnter( waypoint ) {
 		console.log( `entered ${waypoint.name}` )
+		waypoint.waypointEl.setAttribute( "visible", false )
 		loadWaypoint( waypoint )
+
 	}
 
 	geo.onLeave = function onLeave( waypoint ) {
 		console.log( `left ${waypoint.name}` )
+		waypoint.waypointEl.setAttribute( "visible", true )
 		cleanup()
 	}
 
@@ -45,6 +48,7 @@ function init() {
 	for ( let waypointInfo of journey.waypoints ) {
 		// waypointInfo.name
 		const waypointEl = document.createElement( "a-entity" )
+		waypointInfo.waypointEl = waypointEl
 		waypointEl.classList.add( "marker" )
 		waypointEl.setAttribute( "waypoint-marker", {
 			"name": waypointInfo.name,

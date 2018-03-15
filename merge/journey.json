@@ -5,8 +5,8 @@
 			"name": "ballroom",
 			"color": "black",
 			"coords": {
-				"latitude": 34.020096,
-				"longitude": -118.28613
+				"latitude": 34.0202336,
+				"longitude": -118.2863511
 			},
 			"contents": [
 				{
@@ -14,14 +14,35 @@
 					"title": "test title",
 					"body": "test body",
 					"distance": 5,
-					"heading": 45
+					"heading": 0
 				},
 				{
 					"type": "image",
 					"url": "https://www.merriam-webster.com/assets/mw/images/article/art-wap-article-main/puppy-3143-7cfb4d6a42dfc7d9d1ae7e23126279e8@1x.jpg",
 					"description": "testarooni image",
 					"distance": 5,
-					"heading": 75
+					"heading": 180
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_07.png",
+					"description": "testarooni image",
+					"distance": 5,
+					"heading": -60
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_08.png",
+					"description": "testarooni image",
+					"distance": 5,
+					"heading": 0
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_09.png",
+					"description": "testarooni image",
+					"distance": 5,
+					"heading": 60
 				}
 			]
 		},
