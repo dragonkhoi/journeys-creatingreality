@@ -93,7 +93,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
-874bacaf0782f78edb53103b8d6ce8a9 Assembly-CSharp.dll:.TestLocationService
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.TestLocationService
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -124,7 +124,7 @@ df632366226f4181187c8de5b9e04f30 Assembly-CSharp.dll:GoogleARCore.HelloAR.HelloA
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:GoogleARCore.HelloAR.PointcloudVisualizer
-d300e1f08f2b8b757d767ab69e52720e Assembly-CSharp.dll:.LocationManager
+00c909603eb86875574e9f8836a5e729 Assembly-CSharp.dll:.LocationManager
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -158,3 +158,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.CollisionHandler
 17acfc911efe3d64063eb7c63b38170d Assembly-CSharp.dll:.WaypointObj
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Pulse
+d304a027355b2e2570c807aef97077af Assembly-CSharp.dll:.Speaker
+923144bb526b7030cb8544c1529725fb Assembly-CSharp.dll:.AudioManager
