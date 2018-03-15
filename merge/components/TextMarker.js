@@ -20,9 +20,9 @@ AFRAME.registerComponent('text-marker', {
 
     const signPlate = document.createElement( "a-entity" )
     signPlate.setAttribute("geometry", "primitive: plane; width: auto; height: 0.3")
-    signPlate.setAttribute("material", `color: ${this.data.color}`)
+    signPlate.setAttribute("material", `color: ${this.data.plateColor}`)
     signPlate.setAttribute("scale", "6.0 6.0 0.0")
-    signPlate.setAttribute("text", "value:" + this.data.message + "; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;")
+    signPlate.setAttribute("text", "value:" + this.data.message + "; anchor: center; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;")
 
     const signPost = document.createElement( "a-entity" )
     signPost.setAttribute("geometry", "primitive: plane; width: 0.05; height: 1.0")
