@@ -3,10 +3,10 @@
 	"waypoints": [
 		{
 			"name": "ballroom",
-			"color": "black",
+			"color": "red",
 			"coords": {
-				"latitude": 34.020638,
-				"longitude": -118.285893
+				"latitude": 34.020177,
+				"longitude": -118.286051
 			},
 			"contents": [
 				{
@@ -41,7 +41,7 @@
 		},
 		{
 			"name": "Campus center",
-			"color": "black",
+			"color": "green",
 			"coords": {
 				"latitude": 34.020283,
 				"longitude": -118.285126
@@ -76,70 +76,6 @@
 					"heading": 0
 				}
 			]
-		},
-		{
-			"name": "testination",
-			"color": "yellow",
-			"coords": {
-				"latitude": 34.020187,
-				"longitude": -118.28584
-			}
-		},
-		{
-			"name": "north",
-			"color": "red",
-			"coords": {
-				"latitude": 34.025436,
-				"longitude": -118.28651
-			}
-		},
-		{
-			"name": "east",
-			"color": "green",
-			"coords": {
-				"latitude": 34.02,
-				"longitude": -118.28092
-			}
-		},
-		{
-			"name": "south",
-			"color": "white",
-			"coords": {
-				"latitude": 34.01431,
-				"longitude": -118.28608
-			}
-		},
-		{
-			"name": "west",
-			"color": "blue",
-			"coords": {
-				"latitude": 34.020638,
-				"longitude": -118.29282
-			}
-		},
-		{
-			"name": "fander's pork 🌳",
-			"color": "red",
-			"coords": {
-				"latitude": 34.021492,
-				"longitude": -118.28485
-			}
-		},
-		{
-			"name": "ol' starbsy",
-			"color": "brown",
-			"coords": {
-				"latitude": 34.01856,
-				"longitude": -118.28185
-			}
-		},
-		{
-			"name": "cooliseum 😎",
-			"color": "black",
-			"coords": {
-				"latitude": 34.014034,
-				"longitude": -118.28786
-			}
 		}
 	]
 }
