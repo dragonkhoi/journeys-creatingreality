@@ -152,6 +152,7 @@ namespace GoogleARCore.HelloAR
                     wpPivot.position = hit.Pose.position;
                     var anchor = hit.Trackable.CreateAnchor(hit.Pose);
                     wpPivot.transform.parent = anchor.transform;
+                    FindObjectOfType<LocationManager>().ShowWaypoints();
                 }
                 //var andyObject = Instantiate(AndyAndroidPrefab, hit.Pose.position, hit.Pose.rotation);
 

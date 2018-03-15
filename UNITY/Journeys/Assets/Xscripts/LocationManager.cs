@@ -10,7 +10,6 @@ public class LocationManager : MonoBehaviour {
     float startOrientation;
     float orientationalCalibration;
     float unityNorth;
-    public Text tx;
     float recalibrationTimer;
     float recalibrationTime = 10f;
     public bool calibrated = false;
@@ -31,10 +30,6 @@ public class LocationManager : MonoBehaviour {
 
     public static LocationManager Instance;
 
-    void DisplayError(string msg)
-    {
-        tx.text = msg;
-    }
     // Use this for initialization
     void Start () {
         Instance = this;
@@ -60,7 +55,6 @@ public class LocationManager : MonoBehaviour {
         b = b * Mathf.Deg2Rad;
         print(d + " " +  b);
         //b = (b + (unityNorth*Mathf.Deg2Rad));
-        DisplayError(d + " " + b);
         float x = d * Mathf.Sin(b);
         float z = d * Mathf.Cos(b);
         return new Vector3(x, 0, z);
@@ -100,7 +94,6 @@ public class LocationManager : MonoBehaviour {
             // location is ready
             if (!calibrated)
             {
-                DisplayError("initializing location");
                 InitializeLocation();
                 // if startOrientation = orientationalCalibration, pointing north
             }
@@ -108,8 +101,6 @@ public class LocationManager : MonoBehaviour {
             {
                 float trueHeading = Input.compass.trueHeading;
                 //startGeoLocation = new Vector2(MotionDna.Position.x, MotionDna.Position.z);
-
-                DisplayError("" + trueHeading + " rot: " + transform.rotation.eulerAngles.y + " unitynorth: " + unityNorth + " startGeo: " + startGeoLocation );
 
             }
             recalibrationTimer -= Time.deltaTime;
@@ -128,8 +119,6 @@ public class LocationManager : MonoBehaviour {
         startLocation = transform.position;
         startGeoLocation = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
         startOrientation = transform.rotation.eulerAngles.y;
-        
-        DisplayError(""+trueHeading);
         startGeoOrientation = trueHeading; // 40, 0, 0 - 40
         unityNorth = (startOrientation - startGeoOrientation);
         //MotionDna.Init(DEV_KEY)
@@ -150,6 +139,13 @@ public class LocationManager : MonoBehaviour {
             if(i == 0)
             {
                 waypointGOs[0].GetComponent<WaypointObj>().SetRenderer(false);
+                foreach(GameObject go in waypointGOs[0].GetComponent<WaypointObj>().contentPointGOs)
+                {
+                    if(go.GetComponent<Speaker>() != null)
+                    {
+                        go.GetComponent<Speaker>().PlaySounds();
+                    }
+                }
             }
             if(i > 0)
             {
@@ -221,9 +217,18 @@ public class LocationManager : MonoBehaviour {
         {
             GameObject audioGO = Instantiate(audioPrefab, wpGO.transform.position + offset, Quaternion.identity, wpGO.transform) as GameObject;
             audioGO.transform.LookAt(wpGO.transform);
-            audioGO.GetComponent<Speaker>().SetAudioClip(Resources.Load(cp.mediaUri) as AudioClip);
-            wpGO.GetComponent<WaypointObj>().AddContentPointGO(audioGO);
+            if(cp.mediaUri == "audio/start")
+            {
+                audioGO.GetComponent<Speaker>().SetAudioClip(FindObjectOfType<AudioManager>().start);
 
+            }
+            else if(cp.mediaUri == "audio/mom")
+            {
+                audioGO.GetComponent<Speaker>().SetAudioClip(FindObjectOfType<AudioManager>().mom);
+
+            }
+            wpGO.GetComponent<WaypointObj>().AddContentPointGO(audioGO);
+            
         }
     }
     void ShiftAllWaypoints()
@@ -245,8 +250,6 @@ public class LocationManager : MonoBehaviour {
         startLocation = transform.position;
         startGeoLocation = new Vector2(Input.location.lastData.latitude, Input.location.lastData.longitude);
         //startGeoLocation = new Vector2(MotionDna.Position.x, MotionDna.Position.z);
-        DisplayError("" + startGeoLocation);
-
         startOrientation = transform.rotation.eulerAngles.y;
         float trueHeading = Input.compass.trueHeading;
         startGeoOrientation = trueHeading;

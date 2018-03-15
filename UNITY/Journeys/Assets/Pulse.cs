@@ -11,7 +11,7 @@ public class Pulse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var bounce = 1f + Mathf.PingPong(Time.time, 0.2f);
-        transform.localScale = new Vector3(bounce, bounce, bounce);
+        //var bounce = 1f + Mathf.PingPong(Time.time, 0.2f);
+        //transform.localScale = new Vector3(bounce, bounce, bounce);
     }
 }

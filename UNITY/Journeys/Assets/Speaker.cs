@@ -3,22 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Speaker : MonoBehaviour {
-
+    Transform player;
+    AudioSource audSrc;
+    public bool playedOnce = false;
 	// Use this for initialization
-	void Start () {
-		
+	void Awake () {
+        audSrc = GetComponent<AudioSource>();
+
+        player = GameObject.FindGameObjectWithTag("Player").transform;
 	}
     public void SetAudioClip(AudioClip aud)
     {
-        var audSrc = GetComponent<AudioSource>();
+        Debug.Log("set clip:" + aud.name);
+        audSrc = GetComponent<AudioSource>();
         audSrc.clip = aud;
     }
 
     public void PlaySounds()
     {
-        var audSrc = GetComponent<AudioSource>();
-        audSrc.PlayOneShot(audSrc.clip);
+        print("play sounds");
+        audSrc = GetComponent<AudioSource>();
 
+        if (audSrc != null)
+        {
+            audSrc.Play();
+            playedOnce = true;
+        }
+            
     }
 
     // Update is called once per frame
@@ -26,6 +37,11 @@ public class Speaker : MonoBehaviour {
         float randy = Random.Range(0, 0.25f);
         var bounce = 1f + Mathf.PingPong(Time.time, randy);
         transform.localScale = new Vector3(bounce, bounce, bounce);
-        transform.Rotate(new Vector3(bounce * 5, bounce * 5, bounce * 5));
+        //transform.Rotate(new Vector3(bounce * 5, bounce * 5, bounce * 5));
+        if ((player.position - transform.position).magnitude < 20)
+        {
+            if(!audSrc.isPlaying && audSrc.clip != null && FindObjectOfType<GoogleARCore.HelloAR.HelloARController>().anchorCreated && !playedOnce)
+                PlaySounds();
+        }
     }
 }
