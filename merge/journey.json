@@ -5,8 +5,8 @@
 			"name": "ballroom",
 			"color": "black",
 			"coords": {
-				"latitude": 34.0202336,
-				"longitude": -118.2863511
+				"latitude": 34.020638,
+				"longitude": -118.285893
 			},
 			"contents": [
 				{
@@ -43,8 +43,8 @@
 			"name": "Campus center",
 			"color": "black",
 			"coords": {
-				"latitude": 33.0202336,
-				"longitude": -118.2863511
+				"latitude": 34.020283,
+				"longitude": -118.285126
 			},
 			"contents": [
 				{
