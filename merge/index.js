@@ -32,7 +32,6 @@ function init() {
 		console.log( `entered ${waypoint.name}` )
 		waypoint.waypointEl.setAttribute( "visible", false )
 		loadWaypoint( waypoint )
-
 	}
 
 	geo.onLeave = function onLeave( waypoint ) {
@@ -42,8 +41,6 @@ function init() {
 	}
 
 	const waypointEls = []
-
-	// journey.name;
 
 	for ( let waypointInfo of journey.waypoints ) {
 		// waypointInfo.name
@@ -64,7 +61,6 @@ function init() {
 			waypointEl.setAttribute( "waypoint-marker", "userCoords", { x: position.coords.latitude, y: position.coords.longitude } )
 		}
 	}
-
 }
 
 function loadWaypoint( waypoint ) {

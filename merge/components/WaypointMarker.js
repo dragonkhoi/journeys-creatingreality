@@ -14,9 +14,8 @@ AFRAME.registerComponent( "waypoint-marker", {
 	},
 	init: function () {
 		// this.el.setAttribute( "text", "value: " + this.data.message + "; color: " + this.data.textColor + "; align: center" )
-		this.el.setAttribute( "geometry", "primitive: box; width: 2; height: 40; depth: 2;" )
+		this.el.setAttribute( "geometry", "primitive: cylinder; radius: 1; height: 200;" )
 		this.el.setAttribute( "material", "color", this.data.color )
-
 		// this.el.setAttribute( "position", this.data.position )
 	},
 	tick: function () {
@@ -39,7 +38,7 @@ AFRAME.registerComponent( "waypoint-marker", {
 			const distance = Geo.getDistance( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
 			// console.log( "???", bearing, distance )
 			const x = distance * Math.sin( Math.radians( bearing ) )
-			const y = 0.5
+			const y = 100
 			const z = distance * Math.cos( Math.radians( bearing ) )
 			this.el.object3D.position.x = x
 			this.el.object3D.position.y = y
