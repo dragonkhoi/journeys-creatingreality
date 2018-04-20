@@ -9,7 +9,7 @@ Geo = function Geo( zones ) {
 	}
 	this.zones = zones
 
-	this.radius = 20
+	this.radius = 100
 
 	this.onUpdate
 

@@ -8,7 +8,7 @@ AFRAME.registerComponent('text-marker', {
     position: { type: 'string', default: "0 0 0" },
     distance: { type: 'number', default: 5 },
     heading: { type: 'number', default: 0 },
-    plateColor: { type: 'color', default: "#B8860B" },
+    plateColor: { type: 'color', default: "#FFF0F5" },
     postColor: { type: 'color', default: "#f8f8f8" },
   },
   init: function(){
@@ -19,10 +19,10 @@ AFRAME.registerComponent('text-marker', {
     this.el.setAttribute("look-at", "[camera]")
 
     const signPlate = document.createElement( "a-entity" )
-    signPlate.setAttribute("geometry", "primitive: plane; width: auto; height: 0.3")
+    signPlate.setAttribute("geometry", "primitive: plane; width: auto; height: 0.2")
     signPlate.setAttribute("material", `color: ${this.data.plateColor}`)
     signPlate.setAttribute("scale", "6.0 6.0 0.0")
-    signPlate.setAttribute("text", "value:" + this.data.message + "; anchor: center; zOffset: 100; color: #000000; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;")
+    signPlate.setAttribute("text", "value:" + this.data.message + "; anchor: center; zOffset: 100; color: #000000; width: 1; shader: msdf; font:https://raw.githubusercontent.com/etiennepinchon/aframe-fonts/master/fonts/roboto/Roboto-Medium.json;")
 
     const signPost = document.createElement( "a-entity" )
     signPost.setAttribute("geometry", "primitive: plane; width: 0.05; height: 1.0")

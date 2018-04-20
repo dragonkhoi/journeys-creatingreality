@@ -28,6 +28,10 @@ function init() {
 	scene.appendChild( anchor )
 	geo = new Geo( journey.waypoints )
 
+	setTimeout( function () {
+		geo.onEnter( journey.waypoints[ 0 ] )
+	}, 10000 )
+
 	geo.onEnter = function onEnter( waypoint ) {
 		console.log( `entered ${waypoint.name}` )
 		waypoint.waypointEl.setAttribute( "visible", false )
