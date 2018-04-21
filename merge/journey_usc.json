@@ -1,0 +1,43 @@
+{
+	"name": "my journey",
+	"waypoints": [
+		{
+			"name": "ballroom",
+			"color": "red",
+			"coords": {
+				"latitude": 35.020031,
+				"longitude": -118.286163
+			},
+			"contents": [
+				{
+					"type": "text",
+					"title": "test title",
+					"body": "This was my favorite library to study for exams with my friends. I have spent countless nights here.",
+					"distance": 8,
+					"heading": 0
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_07.png",
+					"description": "testarooni image",
+					"distance": 10,
+					"heading": -60
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_08.png",
+					"description": "testarooni image",
+					"distance": 10,
+					"heading": 0
+				},
+				{
+					"type": "image",
+					"url": "../assets/img/USC_photo_09.png",
+					"description": "testarooni image",
+					"distance": 10,
+					"heading": 60
+				}
+			]
+		}
+	]
+}

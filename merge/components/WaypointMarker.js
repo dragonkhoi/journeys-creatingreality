@@ -35,7 +35,12 @@ AFRAME.registerComponent( "waypoint-marker", {
 
 			const bearing = Geo.getBearing( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
 			// console.log( this.data.name, bearing )
-			const distance = Geo.getDistance( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
+			let distance = Geo.getDistance( { latitude: this.data.userCoords.x, longitude: this.data.userCoords.y }, { latitude: this.data.coords.x, longitude: this.data.coords.y } )
+			// const distance = 10
+			// distance = distance ^ 0.1
+			if ( distance > 100 ) {
+				distance = 100
+			}
 			// console.log( "???", bearing, distance )
 			const x = distance * Math.sin( Math.radians( bearing ) )
 			const y = 100

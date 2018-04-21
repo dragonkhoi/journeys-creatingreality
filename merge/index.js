@@ -34,14 +34,14 @@ function init() {
 
 	geo.onEnter = function onEnter( waypoint ) {
 		console.log( `entered ${waypoint.name}` )
-		waypoint.waypointEl.setAttribute( "visible", false )
-		loadWaypoint( waypoint )
+		// waypoint.waypointEl.setAttribute( "visible", false )
+		// loadWaypoint( waypoint )
 	}
 
 	geo.onLeave = function onLeave( waypoint ) {
 		console.log( `left ${waypoint.name}` )
-		waypoint.waypointEl.setAttribute( "visible", true )
-		cleanup()
+		// waypoint.waypointEl.setAttribute( "visible", true )
+		// cleanup()
 	}
 
 	const waypointEls = []
